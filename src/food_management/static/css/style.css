@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+ul,ol{
+   list-style: none;
+}
+section.wrapper{
+   width: 90%;
+   max-width: 1200px;
+   align-items: center;
+   margin: 0 auto;
+}
+
+section#login{
+    background-color: #0d66b9;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+
+    
+}
+section.title{
+
+}
+section.title h1{
+    color: #fff;
+    font-weight: 700px;
+    font-size: 35px;
+    
+}
+section.title h3{
+    color: #90ed56;
+    text-align: right;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+
+section#login section.form{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+section#login div.top{
+    margin-bottom: 30px;
+
+}
+section#login div.top h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+section#login div.bottom{
+   
+    
+}
+section#login div.bottom input{
+   width: 100%;
+   padding: 10px;
+   border-radius: 8px;
+    
+}
+section#login div.input_container{
+    margin-bottom: 30px;
+     
+ }
+ section#login div.submit_container{
+    display: grid;
+ 
+ }
+ section#login div.submit_container p.error_message{
+    color: red;
+    
+ }
+ section#login div.submit_container button{
+    width: 100%;
+    border-radius: 12px;
+    background-color: #90ed56;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    margin-bottom: 20px;
+    cursor: pointer;
+
+     
+ }
+ section#login div.submit_container a{
+    justify-self: flex-end;
+    align-self:center ;
+
+ }
