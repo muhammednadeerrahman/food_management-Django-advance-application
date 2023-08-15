@@ -8,7 +8,9 @@ class StudentForm(forms.ModelForm):
         fields = ["username","password",]
         widgets = {
             "password" : forms.widgets.PasswordInput(attrs={"placeholder" : "enter password"}),
-             "username" : forms.widgets.TextInput(attrs = {
-                "placeholder" : "enter username"
-            }),
+             "username" : forms.widgets.TextInput(attrs = {"placeholder" : "enter username"}),
+             "firstname" : forms.widgets.TextInput(attrs = {"placeholder" : "enter firstname"}),
+             "lastname" : forms.widgets.TextInput(attrs = {"placeholder" : "enter lastname"}),
+             "email" : forms.widgets.EmailInput(attrs = {"placeholder" : "enter email"}),
+             "mob_number" : forms.widgets.NumberInput(attrs = {"placeholder" : "enter mob_number"}),
         }

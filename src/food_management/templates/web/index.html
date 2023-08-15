@@ -1,11 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <section class="left">
+            <h1><a href=""><span>Meal</span> Planner</a></h1>
+        </section>
+        <section class="right">
+            <a href="" class="button">Meal</a>
+            {% if request.user.is_authenticated %}
+                <a href="" class="button">Log Out</a>
+            {% else %}
+            <a href="" class="button">Logo In</a>
+            {% endif %}
+        </section>
+    </header>
+    <section id="food_menu">
+        <section class="wrapper">
+            <div class="title">
+                {% if request.user.is_authenticated %}
+                    <h1>Hi {{request.user.username}} ! </h1>
+                {% endif %}
+            </div>
+            <div class="middle">
+                    <div class="tab_head">
+                       <ul>
+                        <li><a data-id="first_tab" href="javascript:void(0)"  class="active">breakfast</a></li>
+                        <li><a data-id="second_tab" href="javascript:void(0)"  class="">Lunch</a></li>
+                        <li><a data-id="third_tab" href="javascript:void(0)"  class="">Snack</a></li>
+                        <li><a data-id="fourth_tab" href="javascript:void(0)"  class="">Dinner</a></li>
+
+                       </ul>
+                    </div>
+                    <section class="tab_body">
+                        <div id="first_tab" class="item active">
+                            <h1>breakfast</h1>
+                        </div>
+
+                        <div id="second_tab" class="item">
+                            <h1>Lunch</h1>
+                        </div>
+
+                        <div id="third_tab" class="item">
+                            <h1>Snack</h1>
+                        </div>
+
+                        <div id="fourth_tab" class="item">
+                            <h1>Dinner</h1>
+                        </div>
+
+                    </section>
+                </section>
+                
+            </div>
+        </section>
+    </section>
+
     <h1>plan your meal here....</h1>
+
+
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

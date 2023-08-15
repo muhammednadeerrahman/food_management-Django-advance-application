@@ -151,3 +151,100 @@ section#login div.input_container{
     align-self:center ;
 
  }
+
+ /* login and logout section completed */
+
+ header{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #0d66b9;
+    height: 100px;
+
+ }
+ header section.left{
+ 
+    
+ }
+ header section.left h1{
+    
+ }
+ header section.left a{
+    color: #fff;
+ }
+ header section.left a span{
+    color: #90ed56;
+    
+ }
+ header section.right{
+    
+ }
+ header section.right a.button{
+    padding: 8px 12px;
+    border-radius: 12px;
+    background-color: #90ed56;
+    color: #fff;
+    margin-right: 15px;
+    
+ }
+
+section#food_menu{
+    margin-top: 40px;
+
+}
+section#food_menu div.title{
+    margin-bottom: 30px;
+    
+}
+section#food_menu div.title h1{
+    font-size: 25px;
+    font-weight: 600;
+    
+}
+section#food_menu div.middle{
+    
+}
+section#food_menu div.middle div.tab_head{
+    
+}
+section#food_menu div.middle div.tab_head ul{
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+section#food_menu div.middle div.tab_head ul li{
+    width: 25%;
+    
+}
+section#food_menu div.middle div.tab_head ul li a{
+    border-bottom: 2px solid #727272;
+    color: #727272;
+    display: block;
+    
+}
+section#food_menu div.middle div.tab_head ul li a.active,
+ section#food_menu div.middle div.tab_head ul li a.active:hover{
+    border-bottom: 2px solid #0d66b9;
+    color: #0d66b9;
+    
+}
+section#food_menu div.middle section.tab_body{
+    margin-top: 30px;
+    
+}
+section#food_menu div.middle section.tab_body div.item{
+    display: none;
+
+    
+}
+section#food_menu div.middle section.tab_body div.active{
+    color: #0d66b9;
+    display: block;
+    
+}
+section#food_menu div.middle section.tab_body div.active h1{
+    display: block;
+    
+}
+
