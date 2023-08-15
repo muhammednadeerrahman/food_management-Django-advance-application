@@ -13,6 +13,10 @@ section.wrapper{
    align-items: center;
    margin: 0 auto;
 }
+button.submit :hover{
+    opacity: .5;
+
+}
 
 section#login{
     background-color: #0d66b9;
@@ -53,6 +57,7 @@ section#login section.form{
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
+
 }
 
 section#login div.top{
@@ -65,15 +70,53 @@ section#login div.top h1 {
 }
 
 section#login div.bottom{
-   
+
     
 }
+section#login div.bottom form{
+
+    
+}
+section#login div.bottom form div.top{
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+section#login div.bottom form  div.top div.left{
+    margin-right: 20px;
+
+
+    
+}
+section#login div.bottom form div.top div.right{
+
+
+    
+}
+section#login div.bottom label{
+    font-size: 18px;
+    font-weight: 500;
+
+}
+ 
+ 
 section#login div.bottom input{
    width: 100%;
    padding: 10px;
    border-radius: 8px;
-    
+   outline: none;
+   border-style: solid ;
+   border-color: #0d66b9;
+
+
 }
+section#login div.bottom input :hover{
+    opacity: .5;
+ 
+ 
+ }
 section#login div.input_container{
     margin-bottom: 30px;
      
@@ -95,6 +138,11 @@ section#login div.input_container{
     border: none;
     margin-bottom: 20px;
     cursor: pointer;
+
+     
+ }
+ button :hover{
+   background-color: #0d66b9;
 
      
  }

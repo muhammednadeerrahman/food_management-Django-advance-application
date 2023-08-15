@@ -1,20 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{{title}}</title>
 </head>
 <body>
-    <!-- <label for=""></label>
-    <form action="">
-        <h1>hello</h1>
-        {% csrf_token %}
-        {% for field in forms %}
-        <label for="{{field.id_for_label}}">{{field.label}}</label>
-        {{field}}
-        {% endfor %}
-    </form> -->
+    <section id="login">
+        <section class="title">
+            <span>welcome to <h1> Meal</h1> planner</span>
+            <h3>select your favourite meals</h3>
+        </section>
+        <section class="form">
+            <div class="top">
+                <h1>Student Login</h1>
+            </div>
+            <div class="bottom">
+                <form action="" method="post">
+                {% csrf_token %}
+                <div class="top">
+                    <div class="left">
+                        <div class="input_container">
+                            <label for="id_firstname">firstname</label>
+                            <input id="id_firstname" name="firstname" type="text" >
+                        </div>
+                        <div class="input_container">
+                            <label for="id_lastname">lastname</label>
+                            <input id="id_lastname" name="lastname" type="text" >
+                        </div>
+                        <div class="input_container">
+                            <label for="id_email">email</label>
+                            <input id="id_email" name="email" type="email" >
+                        </div>
+                    </div>
 
+                    <div class="second">
+                        <div class="input_container">
+                            <label for="id_DOB">DOB</label>
+                            <input id="id_DOB" name="DOB" type="date" >
+                        </div>
+                        <div class="input_container">
+                            <label for="id_username">Username</label>
+                            <input id="id_username" name="username" type="text" >
+                        </div>
+                        <div class="input_container">
+                            <label for="id_password">Password</label>
+                            <input id="id_password" name="password" type="password" >
+                        </div>
+                    
+                    </div>
+                </div>
+                <div class="submit_container">
+                    {% if error %}
+                    <p class="error_message">{{message}}</p>
+                    {% endif %}
+                    <button class="submit" type="submit">Log In</button>
+                </div>
+                    
+                   
+                </form>
+            </div>
+        </section>
+    </section>
 </body>
 </html>
