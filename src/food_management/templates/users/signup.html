@@ -6,6 +6,15 @@
     <title>{{title}}</title>
 </head>
 <body>
-    <h1>signup</h1>
+    <label for=""></label>
+    <form action="">
+        <h1>hello</h1>
+        {% csrf_token %}
+        {% for field in forms %}
+        <label for="{{field.id_for_label}}">{{field.label}}</label>
+        {{field}}
+        {% endfor %}
+    </form>
+
 </body>
 </html>
