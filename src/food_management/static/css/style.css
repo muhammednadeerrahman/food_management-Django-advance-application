@@ -26,10 +26,18 @@ section#login{
 section.title{
 
 }
-section.title h1{
+section.title span{
     color: #fff;
-    font-weight: 700px;
+    font-weight: 700;
     font-size: 35px;
+    display: block;
+    
+}
+section.title h1{
+    color: #90ed56;
+    font-weight: 700;
+    font-size: 35px;
+    display: inline-block;
     
 }
 section.title h3{

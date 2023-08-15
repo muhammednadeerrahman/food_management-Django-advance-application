@@ -15,6 +15,18 @@ def login(request):
 
    
    context = {
+      "title" : "student Login",
+      "error" : True,
+      "message" : "Invalid Credentials"
       
    }
    return  render(request, "users/login.html", context = context)
+
+
+def signup(request):
+   context = {
+      "title" : "student Signup",
+      
+      
+   }
+   return render (request,"users/signup.html", context = context) 
