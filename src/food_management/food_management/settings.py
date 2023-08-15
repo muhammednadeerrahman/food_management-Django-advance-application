@@ -19,7 +19,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'django.contrib.postgres',
+    'django.contrib.postgres',
 
 
     'user',
@@ -63,6 +63,14 @@ DATABASES = {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': BASE_DIR / 'db.sqlite3',
     # }
+        'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'meal_planner',
+        'USER' : 'postgres',
+        'PASSWORD' : 'nadeer@4557',
+        'HOST'  : 'localhost',
+        'PORT' : '5432'
+    }
 
 
 }
