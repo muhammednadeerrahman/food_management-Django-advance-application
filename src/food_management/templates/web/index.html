@@ -8,25 +8,14 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <section class="left">
-            <h1><a href=""><span>Meal</span> Planner</a></h1>
-        </section>
-        <section class="right">
-            <a href="" class="button">Meal</a>
-            {% if request.user.is_authenticated %}
-                <a href="" class="button">Log Out</a>
-            {% else %}
-            <a href="" class="button">Logo In</a>
-            {% endif %}
-        </section>
-    </header>
+    {% include "web/includes/header.html" %}
     <section id="food_menu">
         <section class="wrapper">
             <div class="title">
                 {% if request.user.is_authenticated %}
                     <h1>Hi {{request.user.username}} ! </h1>
                 {% endif %}
+                <h1>plan your meal here....</h1>
             </div>
             <div class="middle">
                     <div class="tab_head">
@@ -40,19 +29,82 @@
                     </div>
                     <section class="tab_body">
                         <div id="first_tab" class="item active">
-                            <h1>breakfast</h1>
+                            <ul>
+                                <li>
+                                    <img src="{% static 'images/idli.jpeg' %}" alt="">
+                                </li>
+
+                                <li>
+                                    <img src="{% static 'images/dosa.jpg' %}" alt="">
+                                </li>
+
+                                <li>
+                                    <img src="{% static 'images/kputtu.jpg' %}" alt="">
+
+                                </li>
+                            </ul>
+                            <a href="{% url 'planner:planner' %}">select your breakfast</a>
+                            
                         </div>
 
                         <div id="second_tab" class="item">
-                            <h1>Lunch</h1>
+                            <ul>
+                                <li>
+                                    <img src="{% static 'images/meals.jpg' %}" alt="">
+
+                                </li>
+
+                                <li>
+                                    <img src="{% static 'images/ChickenBiryani.jpg' %}" alt="">
+            
+                                </li>
+
+                                <li>
+                                    <img src="{% static 'images/firedrice.jpg' %}" alt="">
+                    
+                                </li>
+                            </ul>
+                            <a href="">select your Lunch</a>
                         </div>
 
                         <div id="third_tab" class="item">
-                            <h1>Snack</h1>
+                            <ul>
+                                <li>
+                                    <img src="" alt="">
+                    
+                                </li>
+
+                                <li>
+                                    <img src="" alt="">
+                                
+                                </li>
+
+                                <li>
+                                    <img src="" alt="">
+                                    <h
+                                </li>
+                            </ul>
+                            <a href="">select your  evening snack</a>
                         </div>
 
                         <div id="fourth_tab" class="item">
-                            <h1>Dinner</h1>
+                            <ul>
+                                <li>
+                                    <img src="" alt="">
+                
+                                </li>
+
+                                <li>
+                                    <img src="" alt="">
+        
+                                </li>
+
+                                <li>
+                                    <img src="" alt="">
+                
+                                </li>
+                            </ul>
+                            <a href="">select your Dinner</a>
                         </div>
 
                     </section>
@@ -62,7 +114,7 @@
         </section>
     </section>
 
-    <h1>plan your meal here....</h1>
+    
 
 
     <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>

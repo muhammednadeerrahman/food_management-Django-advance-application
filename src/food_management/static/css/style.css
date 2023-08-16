@@ -159,7 +159,8 @@ section#login div.input_container{
     justify-content: space-between;
     padding: 40px;
     background-color: #0d66b9;
-    height: 100px;
+    height: 80px;
+    align-items: center;
 
  }
  header section.left{
@@ -187,6 +188,7 @@ section#login div.input_container{
     margin-right: 15px;
     
  }
+/* header section completed */
 
 section#food_menu{
     margin-top: 40px;
@@ -206,6 +208,7 @@ section#food_menu div.middle{
 }
 section#food_menu div.middle div.tab_head{
     
+    
 }
 section#food_menu div.middle div.tab_head ul{
     display: flex;
@@ -221,6 +224,8 @@ section#food_menu div.middle div.tab_head ul li a{
     border-bottom: 2px solid #727272;
     color: #727272;
     display: block;
+    font-size: 25px;
+    font-weight: 600;
     
 }
 section#food_menu div.middle div.tab_head ul li a.active,
@@ -230,7 +235,7 @@ section#food_menu div.middle div.tab_head ul li a.active,
     
 }
 section#food_menu div.middle section.tab_body{
-    margin-top: 30px;
+    margin-top:80px;
     
 }
 section#food_menu div.middle section.tab_body div.item{
@@ -243,8 +248,44 @@ section#food_menu div.middle section.tab_body div.active{
     display: block;
     
 }
-section#food_menu div.middle section.tab_body div.active h1{
-    display: block;
+section#food_menu div.middle section.tab_body div.active ul{
+    display: flex;
+    justify-content: space-between;
     
 }
+section#food_menu div.middle section.tab_body div.active ul li{
 
+    width: 30%;
+    
+    
+}
+section#food_menu div.middle section.tab_body div.active ul li img{
+    
+    display: block;
+    width: 100%;
+    height: 240px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+
+    
+}
+section#food_menu div.middle section.tab_body div.active ul li h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: #727272;
+    margin-left: 40px;
+    
+    
+}
+section#food_menu div.middle section.tab_body div.active a{
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+    background-color: #0d66b9;
+    padding: 10px 16px;
+    display: inline-block;
+    margin: 30px 0 ;
+    border-radius: 10px;
+    
+    
+}
