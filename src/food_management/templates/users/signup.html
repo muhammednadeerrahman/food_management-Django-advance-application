@@ -20,44 +20,22 @@
             <div class="bottom">
                 <form action="" method="post">
                 {% csrf_token %}
-                <div class="top">
-                    <div class="left">
-                        <div class="input_container">
-                            <label for="id_firstname">firstname</label>
-                            <input id="id_firstname" name="firstname" type="text" >
-                        </div>
-                        <div class="input_container">
-                            <label for="id_lastname">lastname</label>
-                            <input id="id_lastname" name="lastname" type="text" >
-                        </div>
-                        <div class="input_container">
-                            <label for="id_email">email</label>
-                            <input id="id_email" name="email" type="email" >
-                        </div>
-                    </div>
+                    <div class="top">
+                        <div class="left">
+                            {% for field in form %}
+                            <div class="input_container">
+                                <label for="field.id_for_label">{{field.label}}</label>
+                                {{field}}
+                            </div>
+                            {% endfor %}
 
-                    <div class="second">
-                        <div class="input_container">
-                            <label for="id_DOB">DOB</label>
-                            <input id="id_DOB" name="DOB" type="date" >
-                        </div>
-                        <div class="input_container">
-                            <label for="id_username">Username</label>
-                            <input id="id_username" name="username" type="text" >
-                        </div>
-                        <div class="input_container">
-                            <label for="id_password">Password</label>
-                            <input id="id_password" name="password" type="password" >
-                        </div>
-                    
                     </div>
-                </div>
-                <div class="submit_container">
-                    {% if error %}
-                    <p class="error_message">{{message}}</p>
-                    {% endif %}
-                    <button class="submit" type="submit">Log In</button>
-                </div>
+                    <div class="submit_container">
+                        {% if error %}
+                        <p class="error_message">{{message}}</p>
+                        {% endif %}
+                        <button class="submit" type="submit">Log In</button>
+                    </div>
                     
                    
                 </form>

@@ -50,7 +50,6 @@ def signup(request):
               first_name = instance.first_name,
               last_name = instance.last_name,
               email = instance.email,
-              mob_number = instance.mob_number
            )
            student = Student.objects.create(name = instance.First_name,user=user)
            user = authenticate(request,username=instance.username, password=instance.password)

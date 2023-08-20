@@ -5,5 +5,6 @@ app_name = "planner"
 
 urlpatterns = [
     path('planner/',views.planner, name = "planner"),
+    # path('profile_form_view/',views.profile_form_view, name = "profile_form_view"),
 
 ]
