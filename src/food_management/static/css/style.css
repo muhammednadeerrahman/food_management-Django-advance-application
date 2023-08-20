@@ -190,6 +190,7 @@ section#login div.input_container{
  }
 /* header section completed */
 
+
 section#food_menu{
     margin-top: 40px;
 
@@ -287,5 +288,121 @@ section#food_menu div.middle section.tab_body div.active a{
     margin: 30px 0 ;
     border-radius: 10px;
     
+    
+}
+/* index page completed */
+
+section#plan{
+    margin-top: 40px;
+   
+
+}
+section#plan div.top{
+    
+}
+section#plan div.top div.date{
+    
+}
+section#plan div.top div.date h1{
+    margin-bottom: 10px;
+    
+}
+section#plan div.top div.date h4{
+    
+}
+section#plan div.top div.days{
+    align-items: center;
+    margin: 30px 0;
+    
+    
+}
+section#plan div.top div.days ul{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    
+}
+section#plan div.top div.days ul li.item{
+    background-color: #fff;
+    border: 2px solid #727272;
+    border-radius: 50%;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+
+    
+}
+section#plan div.top div.days ul li.active{
+    background-color: #0d66b9;
+    border: 2px solid #0d66b9;
+    border-radius: 50%;
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    padding: 15px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+
+    
+}
+section#plan div.top div.days ul li.item a{
+    color: #0d66b9;
+    display: block;
+    
+}
+section#plan div.top div.days ul li.active a{
+    color: #fff;
+    display: block;
+    
+}
+section#plan div.top div.days ul li a span{
+    display: block;
+
+    
+    
+}
+section#plan div.meals{
+    
+}
+section#plan div.meals form{
+    
+}
+section#plan div.meals form div.item{
+    margin-bottom: 20px;
+    
+}
+section#plan div.meals form div.item div.menu_head{
+    
+}
+section#plan div.meals form div.item div.menu_head h3{
+    margin-bottom: 20px;
+    
+}
+section#plan div.meals form div.item div.menu{
+    margin-left: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+section#plan div.meals form div.item div.menu label.radio{
+    
+}
+section#plan div.meals form div.item div.menu label.radio input{
+    
+}
+section#plan div.meals form div.item div.menu label.radio span.radio{
+    
+}
+section#plan div.meals form div.item div.menu label.radio span.label{
     
 }

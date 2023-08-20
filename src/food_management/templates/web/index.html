@@ -30,18 +30,11 @@
                     <section class="tab_body">
                         <div id="first_tab" class="item active">
                             <ul>
+                                {% for dish in meal %}
                                 <li>
-                                    <img src="{% static 'images/idli.jpeg' %}" alt="">
+                                    <img src="{{dish.food_image.url}}" alt="breakfast">
                                 </li>
-
-                                <li>
-                                    <img src="{% static 'images/dosa.jpg' %}" alt="">
-                                </li>
-
-                                <li>
-                                    <img src="{% static 'images/kputtu.jpg' %}" alt="">
-
-                                </li>
+                                {% endfor %}
                             </ul>
                             <a href="{% url 'planner:planner' %}">select your breakfast</a>
                             
@@ -49,60 +42,33 @@
 
                         <div id="second_tab" class="item">
                             <ul>
+                                {% for dish in lunch %}
                                 <li>
-                                    <img src="{% static 'images/meals.jpg' %}" alt="">
-
+                                    <img src="{{dish.food_image.url}}" alt="breakfast">
                                 </li>
-
-                                <li>
-                                    <img src="{% static 'images/ChickenBiryani.jpg' %}" alt="">
-            
-                                </li>
-
-                                <li>
-                                    <img src="{% static 'images/firedrice.jpg' %}" alt="">
-                    
-                                </li>
+                                {% endfor %}
                             </ul>
                             <a href="">select your Lunch</a>
                         </div>
 
                         <div id="third_tab" class="item">
                             <ul>
+                                {% for dish in snack %}
                                 <li>
-                                    <img src="" alt="">
-                    
+                                    <img src="{{dish.food_image.url}}" alt="breakfast">
                                 </li>
-
-                                <li>
-                                    <img src="" alt="">
-                                
-                                </li>
-
-                                <li>
-                                    <img src="" alt="">
-                                    <h
-                                </li>
+                                {% endfor %}
                             </ul>
                             <a href="">select your  evening snack</a>
                         </div>
 
                         <div id="fourth_tab" class="item">
                             <ul>
+                                {% for dish in dinner %}
                                 <li>
-                                    <img src="" alt="">
-                
+                                    <img src="{{dish.food_image.url}}" alt="breakfast">
                                 </li>
-
-                                <li>
-                                    <img src="" alt="">
-        
-                                </li>
-
-                                <li>
-                                    <img src="" alt="">
-                
-                                </li>
+                                {% endfor %}
                             </ul>
                             <a href="">select your Dinner</a>
                         </div>

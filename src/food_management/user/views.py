@@ -3,6 +3,7 @@ from django.http.response import HttpResponse,HttpResponseRedirect
 from django.contrib.auth import authenticate,login as auth_login , logout as auth_logout
 from django.contrib.auth.models import User
 
+from planner.models import Student
 from main.functions import generate_form_errors
 from user.forms import StudentForm
 
@@ -51,6 +52,7 @@ def signup(request):
               email = instance.email,
               mob_number = instance.mob_number
            )
+           student = Student.objects.create(name = instance.First_name,user=user)
            user = authenticate(request,username=instance.username, password=instance.password)
            auth_login(request, user)
            return HttpResponseRedirect(reverse("user:login"))
