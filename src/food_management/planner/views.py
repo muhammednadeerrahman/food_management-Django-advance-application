@@ -16,6 +16,7 @@ def planner (request):
     next_7_days = [today + datetime.timedelta(days=i) for i in range(7)]
     if request.method == 'POST':
         selected_date = request.POST.get('selected_date')
+        print(selected_date)
 
         
     context ={

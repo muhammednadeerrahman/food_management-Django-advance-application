@@ -11,8 +11,6 @@
     {% include "web/includes/header.html" %}
     <section id="plan">
         <section class="wrapper">
-            <form action="" method="post">
-                {% csrf_token %}
                 <div class="top">
                     <div class="date">
                         <h1>{{ today|date:'l' }}</h1>
@@ -30,24 +28,19 @@
                         </ul>
                     </div>
                 </div>
-                <div class="meals">
-                    <form action="" method="post">
-                        {% csrf_token %}
-                        
+                <div class="meals">   
                         <div class="item">
                             <div class="menu_head">
                                 <h3>Breakfast</h3>
                             </div>
-                            <div class="menu">
+                            <div class="menu breakfast">
                             {% for meal in breakfast %}
                                 <label class="radio">
-                                    <input type="radio" name="selected_meals" value="{{ meal.dish_name}}">
+                                    <input class="" type="radio" name="selected_breakfast" value="{{ meal.dish_name}}">
                                     <span class="radio"></span>
                                     <span class="label">{{ meal.dish_name }}</span>
                                 </label>
                             {% endfor %}
-
-                              
                             </div>
                         </div>
 
@@ -55,16 +48,14 @@
                             <div class="menu_head">
                                 <h3>Lunch</h3>
                             </div>
-                            <div class="menu">
+                            <div class="menu lunch">
                                 {% for meal in lunch %}
                                     <label class="radio">
-                                        <input type="radio" name="selected_meals" value="{{ meal.dish_name}}">
+                                        <input type="radio" name="selected_lunch" value="{{ meal.dish_name}}">
                                         <span class="radio"></span>
                                         <span class="label">{{ meal.dish_name }}</span>
                                     </label>
                                 {% endfor %}
-                            
-                               
                             </div>
                         </div>
 
@@ -72,39 +63,75 @@
                             <div class="menu_head">
                                 <h3>Evening Snack</h3>
                             </div>
-                            <div class="menu">
+                            <div class="menu snack" >
                             
                                 {% for meal in snack %}
                                     <label class="radio">
-                                        <input type="radio" name="selected_meals" value="{{ meal.dish_name}}">
+                                        <input type="radio" name="selected_snacks" value="{{ meal.dish_name}}">
                                         <span class="radio"></span>
                                         <span class="label">{{ meal.dish_name }}</span>
                                     </label>
                                 {% endfor %}
+                            </div>
                             
                         </div>
                         <div class="item">
                             <div class="menu_head">
                                 <h3>Dinner</h3>
                             </div>
-                            <div class="menu">
-                            
-                            {% for meal in dinner %}
-                                <label class="radio">
-                                    <input type="radio" name="selected_meals" value="{{ meal.dish_name}}">
-                                    <span class="radio"></span>
-                                    <span class="label">{{ meal.dish_name }}</span>
-                                </label>
-                            {% endfor %}
+                            <div class="menu dinner">
+                                {% for meal in dinner %}
+                                    <label class="radio">
+                                        <input type="radio" name="selected_dinner" value="{{ meal.dish_name}}">
+                                        <span class="radio"></span>
+                                        <span class="label">{{ meal.dish_name }}</span>
+                                    </label>
+                                {% endfor %}
                             </div>     
                         </div>
-                        <div class="submit">
-                            <button type="submit"> submit </button>
+
+                        <div class="ready">
+                            <a href="" class="button">make order</a>
                         </div>
-                    </form>
+                      
+                        
+                        
                         
                 </div>
-            </form>
+                
+                <div class="duplicate">
+                    <h2> Please Confirm Your Selection :</h2>
+                    
+                    <div class="selection">
+                        <label for="selected_input_breakfast">selected breakfast is :</label>
+                        <input readonly id="selected_input_breakfast">
+                        <a href="#" class="b_delete">chang selection</a>
+                    </div>
+
+                    <div class="selection">
+                        <label for="selected_input_lunch">selected lunch is :</label>  
+                        <input readonly id="selected_input_lunch">
+                        <a href="#" class="b_delete">chang selection</a>
+                    </div>
+
+                    <div class="selection">
+                        <label for="selected_input_snack">selected snack is :</label>
+                        <input readonly id="selected_input_snack">
+                        <a href="#" class="b_delete">chang selection</a>
+                    </div>
+
+                    <div class="selection">
+                        <label for="selected_input_dinner">selected dinner is :</label>
+                        <input readonly id="selected_input_dinner">
+                        <a href="#" class="b_delete">chang selection</a>
+                    </div>
+
+                    <div class="submit">
+                        <button type="submit"> submit </button>
+            </div>
+
+                </div>
+                
         </section>
     </section>
 
