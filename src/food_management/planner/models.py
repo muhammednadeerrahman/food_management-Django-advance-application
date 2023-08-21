@@ -7,33 +7,33 @@ FOOD_TYPE = (
     ("snack", "Snack") ,
     ("dinner", "Dinner") ,
 )
-BREAKFAST = (
-    ("idli", "Idli") ,
-    ("puttu", "Puttu") ,
-    ("dosa", "dosa") ,
-    ("appam", "Appam") ,
-)
+# BREAKFAST = (
+#     ("idli", "Idli") ,
+#     ("puttu", "Puttu") ,
+#     ("dosa", "dosa") ,
+#     ("appam", "Appam") ,
+# )
 
-LUNCH = (
-    ("chicken biriyani", "Chicken Biriyani") ,
-    ("meals", "Meals") ,
-    ("fried rice", "Fried Rice") ,
-    ("ghee rice and curry", "Ghee Rice and Curry") ,
-)
+# LUNCH = (
+#     ("chicken biriyani", "Chicken Biriyani") ,
+#     ("meals", "Meals") ,
+#     ("fried rice", "Fried Rice") ,
+#     ("ghee rice and curry", "Ghee Rice and Curry") ,
+# )
 
-SNACK = (
-    ("vada", "Vada") ,
-    ("egg puff", "Egg puff") ,
-    ("Samosa", "samosa") ,
-    ("payampori", "payampori") ,
-)
+# SNACK = (
+#     ("vada", "Vada") ,
+#     ("egg puff", "Egg puff") ,
+#     ("Samosa", "samosa") ,
+#     ("payampori", "payampori") ,
+# )
 
-DINNER = (
-    ("porota/chappathi with Egg Curry", "porota/chappathi with Egg Curry") ,
-    ("meals", "Meals") ,
-    ("fried rice", "Fried Rice") ,
-    ("ghee rice and curry", "Ghee Rice and Curry") ,
-)
+# DINNER = (
+#     ("porota/chappathi with Egg Curry", "porota/chappathi with Egg Curry") ,
+#     ("meals", "Meals") ,
+#     ("fried rice", "Fried Rice") ,
+#     ("ghee rice and curry", "Ghee Rice and Curry") ,
+# )
 
 class Student(models.Model):
     name = models.CharField(max_length=100)

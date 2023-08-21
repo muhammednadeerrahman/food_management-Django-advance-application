@@ -39,151 +39,32 @@
                                 <h3>Breakfast</h3>
                             </div>
                             <div class="menu">
+                            {% for meal in breakfast %}
                                 <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="dosa"
-                                    />
+                                    <input type="radio" name="selected_meals" value="{{ meal.dish_name}}">
                                     <span class="radio"></span>
-                                    <span class="label">dosa with sambar & chutney</span>
+                                    <span class="label">{{ meal.dish_name }}</span>
                                 </label>
+                            {% endfor %}
 
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="idli"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">idli with sambar & chutney</span>
-                                </label>
-                                    
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="puttu"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">puttu & kadala curry</span>
-                                </label>
-                                    
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="Appam"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">Appam & Egg Curry</span>
-                                </label>
-                                    
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="porotta"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">porotta & Egg curry</span>
-                                </label>
-                                    
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="kappa"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">kappa & fish curry</span>
-                                </label>
+                              
                             </div>
                         </div>
-                        {}
 
                         <div class="item">
                             <div class="menu_head">
                                 <h3>Lunch</h3>
                             </div>
                             <div class="menu">
+                                {% for meal in lunch %}
+                                    <label class="radio">
+                                        <input type="radio" name="selected_meals" value="{{ meal.dish_name}}">
+                                        <span class="radio"></span>
+                                        <span class="label">{{ meal.dish_name }}</span>
+                                    </label>
+                                {% endfor %}
                             
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="veg_meals"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label"> veg meals</span>
-                                </label>
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="Non_veg_meals"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">Non veg meals</span>
-                                </label>
-                                    
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="Chicken_Biriyani"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">Chicken Biriyani</span>
-                                </label>
-                                    
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="Chicken_Fried_Rice"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label"> Chicken Fried Rice</span>
-                                </label>
-                                    
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="veg_Fried_Rice"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">veg Fried Rice</span>
-                                </label>
-                                    
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="GheeRice"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">GheeRice & Chicken Curry</span>
-                                </label>
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="GheeRice_veg"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">GheeRice & Veg Combo</span>
-                                </label>
+                               
                             </div>
                         </div>
 
@@ -193,69 +74,13 @@
                             </div>
                             <div class="menu">
                             
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="tea_vada"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">Tea & vada</span>
-                                </label>
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="tea_samosa"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">Tea & samosa</span>
-                                </label>
-                                    
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="tea_egg_puffs"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">Tea & Egg Puff</span>
-                                </label>
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="coffee_vada"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">coffee & vada</span>
-                                </label>
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="coffee_samosa"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">coffee & samosa</span>
-                                </label>
-                                    
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="coffee_egg_puffs"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">coffee & Egg Puff</span>
-                                </label>
-                            </div>
-
+                                {% for meal in snack %}
+                                    <label class="radio">
+                                        <input type="radio" name="selected_meals" value="{{ meal.dish_name}}">
+                                        <span class="radio"></span>
+                                        <span class="label">{{ meal.dish_name }}</span>
+                                    </label>
+                                {% endfor %}
                             
                         </div>
                         <div class="item">
@@ -264,36 +89,13 @@
                             </div>
                             <div class="menu">
                             
+                            {% for meal in dinner %}
                                 <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="porota_chicken"
-                                    />
+                                    <input type="radio" name="selected_meals" value="{{ meal.dish_name}}">
                                     <span class="radio"></span>
-                                    <span class="label">chappathi/porota & chicken curry</span>
+                                    <span class="label">{{ meal.dish_name }}</span>
                                 </label>
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="porota_Egg"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">chappathi/porota & egg curry</span>
-                                </label>
-                                    
-
-                                <label class="radio">
-                                    <input
-                                        type="radio"
-                                        name="sort"
-                                        value="porota_veg"
-                                    />
-                                    <span class="radio"></span>
-                                    <span class="label">chappathi/porota & Veg curry</span>
-                                </label>
+                            {% endfor %}
                             </div>     
                         </div>
                         <div class="submit">

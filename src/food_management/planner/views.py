@@ -1,8 +1,15 @@
-from django.shortcuts import render
 import datetime 
+
+from django.shortcuts import render
+
+from planner.models import Meal
 # from planner.forms import BookingForm
 
 def planner (request):
+    breakfast = Meal.objects.filter(food_type = "breakfast")
+    lunch = Meal.objects.filter(food_type = "lunch")
+    snack = Meal.objects.filter(food_type = "snack")
+    dinner = Meal.objects.filter(food_type = "dinner")
     selected_date = None
     today = datetime.datetime.today()
     start_date =today
@@ -15,8 +22,10 @@ def planner (request):
         "start_date" : start_date,
         "today" : today,
         "next_7_days": next_7_days,
-            
-
+        "breakfast" : breakfast,
+        "lunch" : lunch,
+        "snack" : snack,
+        "dinner" : dinner,
 
         }
 
