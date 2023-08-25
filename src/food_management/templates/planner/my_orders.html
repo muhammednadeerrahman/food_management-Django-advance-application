@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Document</title>
 </head>
 <body>
-    <h1>my orders</h1>
-    <a href="">edit</a>
-    <a href="">delete</a>
-    <a href="">draft</a>
+{% include "web/includes/header.html" %}
+
+<section id="bookings">
+<section class="wrapper">
+    <div class="count">
+        <!-- {% for book in order%}
+        {% if book.selected_date >= today %}
+        
+        {% endif %}
+        {% endfor %} -->
+
+
+        {% if required_date %}
+         <strong>my bookings : {{required_date|length}}  </strong> <span>orders available</span>   
+         {% else %}
+         <h3>ohh ! you have not make any orders yet </h3>
+         <a href="{% url 'planner:planner' %}">order meal</a>
+         {% endif %}
+    </div>
+    {% for bookings in  order %}
+    {% if bookings.selected_date >= today %}
+        <div class="orders {% cycle 'one' 'two' 'three' %}">
+                <h1>{{ forloop.counter }}. {{ bookings.selected_date}}</h1>
+                <div class="buttons">
+                    <a class="danger action-button reload"
+                    href="{% url 'planner:delete_order' id=bookings.id %}"
+                    data-text="Are you sure want to remove this post. You can't undo this action." 
+                    data-title="Confirm Delete!"
+                    title="Delete!">
+                        <img src="{% static 'images/icons/delete.svg' %}" alt="Delete" />
+                    </a>
+                    <a class="warning" title="Edit!" href="{% url 'planner:edit_order' id=bookings.id %}" >
+                        <img src="{% static 'images/icons/sheet.svg' %}" alt="Edit" />
+                    </a>
+                </div>
+        </div>
+    {% endif %}
+    {% endfor %}
+</section>
+</section>
+
 </body>
 </html>

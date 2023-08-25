@@ -5,7 +5,9 @@ app_name = "planner"
 
 urlpatterns = [
     path('planner/',views.planner, name = "planner"),
+    path('my_orders/',views.my_orders, name = "my_orders"),
     path('sample/',views.sample, name = "sample"),
-    # path('profile_form_view/',views.profile_form_view, name = "profile_form_view"),
+    path('delete/<int:id>/',views.delete_order, name = "delete_order"),
+    path('edit/<int:id>/',views.edit_order, name = "edit_order"),
 
 ]

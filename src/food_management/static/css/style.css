@@ -744,3 +744,93 @@ section#plan div.duplicate div.submit button:hover{
     border:1px solid #90ed56 ;
     
 }
+
+/* planner page styling completed */
+
+
+section#bookings{
+    padding: 40px;
+    
+
+}
+section#bookings div.count{
+    margin-bottom: 50px;
+    
+}
+section#bookings div.count strong{
+    font-weight: 600;
+    font-size: 22px;
+    color: #0d66b9;
+
+
+    
+}
+section#bookings div.count span{
+    font-weight: 700;
+    font-size: 18px;
+    color: #90ed56;
+
+    
+}
+
+section#bookings div.count h3{
+    font-size: 25px;
+    font-weight: 600;
+    color: #000;
+    
+}
+section#bookings div.orders{
+    border-bottom: 3px solid #727272;
+    border-radius: 10px;
+    margin: 50px auto;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    padding: 0 20px;
+    width: 50%;
+}
+section#bookings div.one{
+    border-bottom: 3px solid #a6c8e7;
+}
+section#bookings div.two{
+    border-bottom: 3px solid #80f737;
+}
+section#bookings div.three{
+    border-bottom: 3px solid rgb(230, 39, 96);
+}
+section#bookings div.orders h1 {
+    font-weight: 600;
+    font-size: 22px;
+    color: #0d66b9;
+    
+}
+section#bookings div.orders div.buttons{
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    align-items: center;
+    
+}
+section#bookings div.orders div.buttons a.danger{
+    background-color: red;
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+section#bookings div.orders div.buttons a.warning{
+    background-color: rgb(194, 194, 8);
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+section#bookings div.orders div.buttons a img{
+    width: 15px;
+    height: 10px;
+
+
+}

@@ -12,7 +12,6 @@ class Student(models.Model):
     name = models.CharField(max_length=100)
     profile_image = models.FileField(upload_to= "planner/profile/", blank=True,null=True)
     mob_number = models.IntegerField(null=True,blank=True)
-    email = models.EmailField(null=True,blank=True)
     student_id = models.CharField(max_length=15,null=True,blank=True)
     user = models.OneToOneField("auth.User",on_delete=models.CASCADE)
 
@@ -35,7 +34,7 @@ class Meal(models.Model):
     
 
 class Order (models.Model):
-    selected_date = models.DateField(unique=True)
+    selected_date = models.DateField()
     selected_breakfast = models.CharField(max_length=200)
     selected_lunch = models.CharField(max_length=200)
     selected_snack = models.CharField(max_length=200)
