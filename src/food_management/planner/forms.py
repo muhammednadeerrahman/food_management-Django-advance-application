@@ -27,6 +27,9 @@ class OrderForm(ModelForm):
                 }),
         }
         error_messages= {
+            'selected_date' : {
+                "required" : "select a date"
+                },
 
             'selected_breakfast' : {
                 "required" : "select a breakfast"

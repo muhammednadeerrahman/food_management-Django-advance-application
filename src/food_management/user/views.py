@@ -21,8 +21,7 @@ def login(request):
          if user is not None :
             auth_login(request, user)
             return(HttpResponseRedirect("/"))
-
-   
+         
          context = {
                 "title" : "student Login",
                 "error" : True,
@@ -94,9 +93,7 @@ def view_profile(request) :
 
         if request.FILES.get('profile_image'):
             student.profile_image = request.FILES['profile_image']
-
         student.save()
-
         response_data = {
                 "message" :"sucessfully profile_updated",
                 "title" :"profile updated",
@@ -115,8 +112,8 @@ def view_profile(request) :
 
 
 def edit(request):
-    user = request.user  # Get the currently logged-in user
-    student = user.student  # Get the Student instance associated with the user
+    user = request.user
+    student = user.student 
 
     if request.method == "POST":
         userform = UserForm(request.POST,request.FILES, instance=student)
