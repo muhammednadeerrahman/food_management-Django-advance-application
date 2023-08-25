@@ -72,3 +72,9 @@ def signup(request):
         "form" : form,
     }
     return render (request,"users/signup.html", context = context) 
+
+
+def view_profile(request) :
+    context = {
+        "title" :"my profile"    }
+    return render (request,"user/view_profile.html)",context = context)

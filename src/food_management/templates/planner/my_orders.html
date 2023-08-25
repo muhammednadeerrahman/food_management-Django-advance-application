@@ -8,46 +8,41 @@
     <title>Document</title>
 </head>
 <body>
-{% include "web/includes/header.html" %}
 
-<section id="bookings">
-<section class="wrapper">
-    <div class="count">
-        <!-- {% for book in order%}
-        {% if book.selected_date >= today %}
-        
-        {% endif %}
-        {% endfor %} -->
-
-
-        {% if required_date %}
-         <strong>my bookings : {{required_date|length}}  </strong> <span>orders available</span>   
-         {% else %}
-         <h3>ohh ! you have not make any orders yet </h3>
-         <a href="{% url 'planner:planner' %}" class="button">Click Here to Make an Order</a>
-         {% endif %}
-    </div>
-    {% for bookings in  order %}
-    {% if bookings.selected_date >= today %}
-        <div class="orders {% cycle 'one' 'two' 'three' %}">
-                <h1>{{ forloop.counter }}. {{ bookings.selected_date}}</h1>
-                <div class="buttons">
-                    <a class="danger action-button reload"
-                    href="{% url 'planner:delete_order' id=bookings.id %}"
-                    data-text="Are you sure want to remove this post. You can't undo this action." 
-                    data-title="Confirm Delete!"
-                    title="Delete!">
-                        <img src="{% static 'images/icons/delete.svg' %}" alt="Delete" />
-                    </a>
-                    <a class="warning" title="Edit!" href="{% url 'planner:edit_order' id=bookings.id %}" >
-                        <img src="{% static 'images/icons/sheet.svg' %}" alt="Edit" />
-                    </a>
-                </div>
+    {% include "web/includes/header.html" %}
+    <section id="bookings">
+    <section class="wrapper">
+        <div class="count">
+            {% if required_date %}
+                <strong>my bookings : {{required_date|length}}  </strong> <span>orders available</span>   
+                {% else %}
+                <h3>ohh ! you have not make any orders yet </h3>
+                <a href="{% url 'planner:planner' %}" class="button">Click Here to Make an Order</a>
+            {% endif %}
         </div>
-    {% endif %}
-    {% endfor %}
-</section>
-</section>
-
+        {% for bookings in  order %}
+            {% if bookings.selected_date >= today %}
+                <div class="orders {% cycle 'one' 'two' 'three' %}">
+                        <h1>{{ forloop.counter }}. {{ bookings.selected_date}}</h1>
+                        <div class="buttons">
+                            <a class="danger action-button reload"
+                            href="{% url 'planner:delete_order' id=bookings.id %}"
+                            data-text="Are you sure want to remove this post. You can't undo this action." 
+                            data-title="Confirm Delete!"
+                            title="Delete!">
+                                <img src="{% static 'images/icons/delete.svg' %}" alt="Delete" />
+                            </a>
+                            <a class="warning" title="Edit!" href="{% url 'planner:edit_order' id=bookings.id %}" >
+                                <img src="{% static 'images/icons/pencil.svg' %}" alt="Edit" />
+                            </a>
+                        </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    </section>
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
