@@ -51,7 +51,7 @@ def signup(request):
               last_name = instance.last_name,
               email = instance.email,
            )
-           student = Student.objects.create(name = instance.First_name,user=user)
+           Student.objects.create(name = instance.first_name,user=user)
            user = authenticate(request,username=instance.username, password=instance.password)
            auth_login(request, user)
            return HttpResponseRedirect(reverse("user:login"))

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    {% include "web/includes/header.html" %}
+    <section id="sample">
+        <section class="wrapper">
+            <form class="ajax redirect" action="" method="post">
+                {% csrf_token %}
+                    {% for field in form %}
+                    <div class="container">
+                        <label for="{field.id_for_label}">{{field.label}}</label>
+                        {{field}}
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="container">
+                        <label for="{{form.selected_breakfast_id_for_label}}">{{form.selected_breakfast.label}}</label>
+                        {{form.selected_breakfast}}
+                    </div>
+                    <div class="container">
+                        <label for="{{form.selected_lunch_id_for_label}}">{{form.selected_lunch.label}}</label>
+                        {{form.selected_lunch}}
+                    </div>
+                    <div class="container">
+                        <label for="{{form.selected_snack_id_for_label}}">{{form.selected_snack.label}}</label>
+                        {{form.selected_snack}}
+                    </div>
+                    <div class="container">
+                        <label for="{{form.selected_dinner_id_for_label}}">{{form.selected_dinner.label}}</label>
+                        {{form.selected_dinner}}
+                    </div> -->
+
+                
+                <button type="submit">submit</button>
+
+
+            </form>
+        </section>
+    </section>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

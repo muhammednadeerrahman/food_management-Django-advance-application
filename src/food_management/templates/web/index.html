@@ -8,75 +8,79 @@
     <title>Document</title>
 </head>
 <body>
-    {% include "web/includes/header.html" %}
-    <section id="food_menu">
-        <section class="wrapper">
-            <div class="title">
-                {% if request.user.is_authenticated %}
-                    <h1>Hi {{request.user.username}} ! </h1>
-                {% endif %}
-                <h1>plan your meal here....</h1>
-            </div>
-            <div class="middle">
-                    <div class="tab_head">
-                       <ul>
-                        <li><a data-id="first_tab" href="javascript:void(0)"  class="active">breakfast</a></li>
-                        <li><a data-id="second_tab" href="javascript:void(0)"  class="">Lunch</a></li>
-                        <li><a data-id="third_tab" href="javascript:void(0)"  class="">Snack</a></li>
-                        <li><a data-id="fourth_tab" href="javascript:void(0)"  class="">Dinner</a></li>
+    <section class="main">
+        
+        {% include "web/includes/header.html" %}
+        <section id="food_menu">
+            <section class="wrapper">
+                <div class="title">
+                    {% if request.user.is_authenticated %}
+                        <h1>Hi {{request.user.username}} ! </h1>
+                    {% endif %}
+                    <h1>plan your meal here....</h1>
+                </div>
+                <div class="middle">
+                        <div class="tab_head">
+                        <ul>
+                            <li><a data-id="first_tab" href="javascript:void(0)"  class="active">breakfast</a></li>
+                            <li><a data-id="second_tab" href="javascript:void(0)"  class="">Lunch</a></li>
+                            <li><a data-id="third_tab" href="javascript:void(0)"  class="">Snack</a></li>
+                            <li><a data-id="fourth_tab" href="javascript:void(0)"  class="">Dinner</a></li>
 
-                       </ul>
-                    </div>
-                    <section class="tab_body">
-                        <div id="first_tab" class="item active">
-                            <ul>
-                                {% for dish in meal %}
-                                <li>
-                                    <img src="{{dish.food_image.url}}" alt="breakfast">
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            <a href="{% url 'planner:planner' %}">select your breakfast</a>
-                            
+                        </ul>
                         </div>
+                        <section class="tab_body">
+                            <div id="first_tab" class="item active">
+                                <ul>
+                                    {% for dish in meal %}
+                                    <li>
+                                        <img src="{{dish.food_image.url}}" alt="breakfast">
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                <a href="{% url 'planner:planner' %}">click Here to Order your Meal</a>
+                                
+                            </div>
 
-                        <div id="second_tab" class="item">
-                            <ul>
-                                {% for dish in lunch %}
-                                <li>
-                                    <img src="{{dish.food_image.url}}" alt="breakfast">
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            <a href="">select your Lunch</a>
-                        </div>
+                            <div id="second_tab" class="item">
+                                <ul>
+                                    {% for dish in lunch %}
+                                    <li>
+                                        <img src="{{dish.food_image.url}}" alt="breakfast">
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                <a href="{% url 'planner:planner' %}">click Here to Order your Meal</a>
+                            </div>
 
-                        <div id="third_tab" class="item">
-                            <ul>
-                                {% for dish in snack %}
-                                <li>
-                                    <img src="{{dish.food_image.url}}" alt="breakfast">
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            <a href="">select your  evening snack</a>
-                        </div>
+                            <div id="third_tab" class="item">
+                                <ul>
+                                    {% for dish in snack %}
+                                    <li>
+                                        <img src="{{dish.food_image.url}}" alt="breakfast">
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                <a href="{% url 'planner:planner' %}">click Here to Order your Meal</a>
+                            </div>
 
-                        <div id="fourth_tab" class="item">
-                            <ul>
-                                {% for dish in dinner %}
-                                <li>
-                                    <img src="{{dish.food_image.url}}" alt="breakfast">
-                                </li>
-                                {% endfor %}
-                            </ul>
-                            <a href="">select your Dinner</a>
-                        </div>
+                            <div id="fourth_tab" class="item">
+                                <ul>
+                                    {% for dish in dinner %}
+                                    <li>
+                                        <img src="{{dish.food_image.url}}" alt="breakfast">
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                                <a href="{% url 'planner:planner' %}">click Here to Order your Meal</a>
+                            </div>
 
+                        </section>
                     </section>
-                </section>
-                
-            </div>
+                    
+                    
+                </div>
+            </section>
         </section>
     </section>
 

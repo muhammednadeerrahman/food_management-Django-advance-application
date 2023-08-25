@@ -7,37 +7,13 @@ FOOD_TYPE = (
     ("snack", "Snack") ,
     ("dinner", "Dinner") ,
 )
-# BREAKFAST = (
-#     ("idli", "Idli") ,
-#     ("puttu", "Puttu") ,
-#     ("dosa", "dosa") ,
-#     ("appam", "Appam") ,
-# )
-
-# LUNCH = (
-#     ("chicken biriyani", "Chicken Biriyani") ,
-#     ("meals", "Meals") ,
-#     ("fried rice", "Fried Rice") ,
-#     ("ghee rice and curry", "Ghee Rice and Curry") ,
-# )
-
-# SNACK = (
-#     ("vada", "Vada") ,
-#     ("egg puff", "Egg puff") ,
-#     ("Samosa", "samosa") ,
-#     ("payampori", "payampori") ,
-# )
-
-# DINNER = (
-#     ("porota/chappathi with Egg Curry", "porota/chappathi with Egg Curry") ,
-#     ("meals", "Meals") ,
-#     ("fried rice", "Fried Rice") ,
-#     ("ghee rice and curry", "Ghee Rice and Curry") ,
-# )
 
 class Student(models.Model):
     name = models.CharField(max_length=100)
     profile_image = models.FileField(upload_to= "planner/profile/", blank=True,null=True)
+    mob_number = models.IntegerField(null=True,blank=True)
+    email = models.EmailField(null=True,blank=True)
+    student_id = models.CharField(max_length=15,null=True,blank=True)
     user = models.OneToOneField("auth.User",on_delete=models.CASCADE)
 
 
@@ -56,5 +32,21 @@ class Meal(models.Model):
 
     def __str__(self):
         return self.dish_name
+    
+
+class Order (models.Model):
+    selected_date = models.DateField(unique=True)
+    selected_breakfast = models.CharField(max_length=200)
+    selected_lunch = models.CharField(max_length=200)
+    selected_snack = models.CharField(max_length=200)
+    selected_dinner = models.CharField(max_length=200)
+
+    
+    student = models.ForeignKey("planner.Student", on_delete=models.CASCADE)
+    is_draft = models.BooleanField(default=False)
+    is_deleted = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.selected_breakfast 
 
 

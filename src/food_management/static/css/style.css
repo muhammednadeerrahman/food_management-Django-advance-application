@@ -17,6 +17,9 @@ button.submit :hover{
     opacity: .5;
 
 }
+a.button:hover{
+    opacity: .7;
+}
 
 section#login{
     background-color: #0d66b9;
@@ -161,13 +164,140 @@ section#login div.input_container{
     background-color: #0d66b9;
     height: 80px;
     align-items: center;
+    position:relative;
 
  }
+ header div.nav{
+    position: absolute;
+    top: 0;
+    right: -900px;
+    width: 450px;
+    height: 200vh;
+    background-color: #727272;
+    padding: 40px;
+    transition: top .5s ease, right .5s ease;
+
+ }
+ header div.nav div.close{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+ }
+ header div.nav div.close span.close{ 
+    width: 25px;
+    height: 25px;
+    border: 1px solid #4f5757;
+    border-radius: 50%;
+    background-color: #90ed56;
+    display: block;
+
+
+ }
+ header div.active{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 450px;
+    height: 200vh;
+    background-color: #727272;
+    padding: 40px;
+    transition: top .5s ease, right .5s ease;
+
+ }
+ header div.nav div.profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+
+ }
+ header div.nav div.profile span.image{
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width:150px;
+    height:150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin-bottom: 30px;
+
+
+ }
+ header div.nav div.profile span.image img{
+    display: block;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+
+ }
+ header div.nav div.profile h1{
+    color: #b6b5b5;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 20px;
+
+ }
+ header div.nav div.profile a.button{
+    display: block;
+    border: 1px solid #90ed56;
+    border-radius: 10px;
+    background-color: #90ed56;
+    color: #fff;
+    padding: 10px 16px;
+    font-size: 20px;
+    font-weight: 600;
+
+ }
+
+ header div.nav div.list{
+    padding: 20px;
+    border-top: 3px solid #90ed56;
+    border-bottom: 3px solid #90ed56;
+    margin: 25px 0;
+
+ }
+
+ header div.nav div.list a.button{
+    display: block;
+    font-size: 25px;
+    font-weight: 600;
+    width: 100%;
+    text-align: center;
+    color: #90ed56;
+
+
+ }
+ header div.nav div.log{
+    align-items: end;
+    justify-content: end;
+    display: flex;
+    
+
+ }
+
+ header div.nav div.log a.button{
+    color: #90ed56;
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+
+ }
+
  header section.left{
  
     
  }
  header section.left h1{
+    
+ }
+ header section.left h1:hover{
+    opacity: 0.5;
     
  }
  header section.left a{
@@ -178,6 +308,28 @@ section#login div.input_container{
     
  }
  header section.right{
+    display: flex;
+
+    
+ }
+ header section.right a.profile{
+    border-radius: 50%;
+    border: 1px solid #c7ced4;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+ }
+ header section.right a.profile:hover{
+ 
+    background-color: #90ed56;
+ }
+ header section.right a.button{
+    padding: 8px 12px;
+    border-radius: 12px;
+    background-color: #90ed56;
+    color: #fff;
+    margin-right: 15px;
     
  }
  header section.right a.button{
@@ -293,7 +445,7 @@ section#food_menu div.middle section.tab_body div.active a{
 /* index page completed */
 
 section#plan{
-    margin-top: 40px;
+    padding: 40px 0;
    
 
 }
@@ -308,6 +460,14 @@ section#plan div.top div.date h1{
     
 }
 section#plan div.top div.date h4{
+    
+}
+section#plan div.top div.days{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0;
+    
     
 }
 section#plan div.top div.days{
@@ -350,6 +510,8 @@ section#plan div.top div.days ul li.active{
     align-items: center;
     display: flex;
     justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
 
 
     
@@ -357,6 +519,23 @@ section#plan div.top div.days ul li.active{
 section#plan div.top div.days ul li.item a{
     color: #0d66b9;
     display: block;
+    
+}
+
+section#plan div.top div.days ul li.item span.common-date{
+    font-size: 15px;
+    font-weight: 700;
+
+    display: block;
+}
+section#plan div.top div.days ul li.red{
+    background-color: red;
+    color: #fff;
+    border: 1px solid red;
+    
+}
+section#plan div.top div.days ul li.red a{
+    color: #fff;
     
 }
 section#plan div.top div.days ul li.active a{
@@ -401,125 +580,67 @@ section#plan div.meals  div.item div.menu{
     border-radius: 20px;
     
 }
-/* section#plan div.meals  div.item div.breakfast{
-background-color: rgb(158, 241, 158);
-    
+section#plan div.meals  div.item div.menu ul {
+    flex-wrap: wrap;
+    display: flex;
+    width: 100%;
 }
-section#plan div.meals  div.item div.lunch{
-    background-color: rgb(186, 166, 233);
+section#plan div.meals  div.item div.menu ul li{
+    display: flex;
+    margin-right: 30px;
+    align-items: center;
+ 
         
 }
-section#plan div.meals  div.item div.snack{
-    background-color: rgb(233, 166, 166);
-        
-}
-section#plan div.meals  div.item div.dinner{
-    background-color: rgb(232, 233, 166);
-        
-} */
-
-/* section#plan div.meals  div.item div.menu label.radio span.active {
-    color: #c96d16;
-    font-weight: 700;
-    font-size: 16px;
-    } */
-    section#plan div.meals div.item div.menu 
-    input[type="radio"] {
-    margin-right: 5px;
-    cursor: pointer;
-}
-
-    
-    section#plan div.meals div.item div.menu 
-    label.radio {
-    color: #4f5757;
-    font-weight: 700;
-    font-size: 16px;
-    display: block;
-    position: relative;
-    cursor: pointer;
-    margin-bottom: 20px;
-    padding-left: 35px;
-    margin-right: 70px
-}
-
-    
-    section#plan div.meals div.item div.menu 
-    label
-    span {
-    color: #4f5757;
-    font-weight: 700;
-    font-size: 16px;
-}
-
-    
-    section#plan div.meals div.item div.menu 
-    label.radio
-    input {
-    position: absolute;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-    left: -2000px;
-}
-
-    
-section#plan div.meals div.item div.menu 
-    label.radio
-    input:checked
-    ~ .radio {
-    background-color: #fff;
-}
-
-    
-section#plan div.meals div.item div.menu 
-    label.radio
-    input:checked
-    ~ .radio::after {
-    opacity: 1;
-}
-
-    
-section#plan div.meals div.item div.menu 
-    label.radio
-    input:checked
-    ~ .label {
-    opacity: 1;
-}
-
-    
-section#plan div.meals div.item div.menu 
-    label.radio
-    .radio {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 2px solid #727272;
-    height: 20px;
+section#plan div.meals  div.item div.menu ul li span.radio{
+    margin-right: 15px;
+    display: inline-block;
     width: 20px;
-    background: #fff;
+    height: 20px;
     border-radius: 50%;
+    border: 2px solid #4f5757;
+ 
+        
 }
+section#plan div.meals  div.item div.menu ul li.active span.radio{
 
-    
-section#plan div.meals div.item div.menu 
-    label.radio
-    .radio::after {
-    content: "";
-    position: absolute;
-    opacity: 0;
-    top: 3px;
-    left: 3px;
+    border: 2px solid #0d66b9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+        
+}
+section#plan div.meals  div.item div.menu ul li.active span.radio span.label{
+
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: #727272;
+    background-color: #0d66b9;
+ 
+        
 }
+section#plan div.meals  div.item div.menu ul li.active{
 
+
+    
+}
+section#plan div.meals  div.item div.menu ul li a{
+    font-weight: 600;
+    font-size: 20px;
+    color: #4f5757;
+        
+}
+section#plan div.meals  div.item div.menu ul li.active a{
+
+    color: #0d66b9;
+
+        
+}
 section#plan div.ready{
     margin-top: 70px;
 }
-section#plan div.ready a.button{
+section#plan div.ready button{
     border: 1px solid #0d66b9;
     background-color:#0d66b9 ;
     color: #fff;
@@ -533,7 +654,7 @@ section#plan div.ready a.button{
     margin: 0 auto;
 
 }
-section#plan div.ready a.button:hover{
+section#plan div.ready button:hover{
     background-color:#90ed56 ;
     color: #fff;
     border: 1px solid #90ed56;
@@ -552,10 +673,10 @@ section#plan div.duplicate h2{
     margin-bottom: 20px;
 }
 section#plan div.duplicate div.selection{
-    margin-bottom: 30px;
+    margin-bottom: 70px;
     
 }
-section#plan div.duplicate div.selection a.b_delete{
+section#plan div.duplicate span.delete{
     margin-top: 15px;
     display: block;
     border-radius: 8px;
@@ -565,11 +686,12 @@ section#plan div.duplicate div.selection a.b_delete{
     padding: 8px 12px;
     color: #fff;
     width: 15%;
-    background-color: #0d66b9;
+    background-color: red;
     text-align: center;
+    cursor: pointer;
     
 }
-section#plan div.duplicate div.selection a.b_delete:hover{
+section#plan div.duplicate span.delete:hover{
     background-color: #90ed56;
     color: #0d66b9;
 
@@ -580,19 +702,26 @@ section#plan div.duplicate label{
     font-size: 20px;
     font-weight: 700;
     color: #0d66b9;
+    margin-right: 20px;
+}
+section#plan div.duplicate label::after{
+   content: ":";
 
 
 }
 section#plan div.duplicate input{
     font-weight: 600;
     font-size: 20px;
-    color: #90ed56;
+    color: #727272;
     border: none;
     outline: none;
 }
 section#plan div.duplicate div.submit{
     text-align: center;
     margin-top: 40px;
+}
+section#plan div.duplicate div.submit p.error_message{
+    color: red;
 }
 section#plan div.duplicate div.submit button{
     padding: 12px 16px;

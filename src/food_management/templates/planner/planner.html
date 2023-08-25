@@ -17,14 +17,36 @@
                         <h4>{{ today|date:'d F Y' }}</h4>
                     </div>
                     <input type="hidden" name="selected_date" id="selected_date_input">
+                    <input type="hidden" name="selected_bf" id="selected_bf_input">
+                    <input type="hidden" name="selected_lc" id="selected_lc_input">
+                    <input type="hidden" name="selected_snacks" id="selected_sk_input">
+                    <input type="hidden" name="selected_dr" id="selected_dr_input">
                     <div class="days">
+                        <h2>choose a date to book the meals</h2>
                         <ul>
+                            
+                            
                             {% for day in next_7_days %}
-                                <li class="item">
-                                    <a href="#" data-value="{{ day }}" ><span>{{day|date:'D' }}</span>{{day|date:'d' }}</a>
-                                </li>
+                                
+                            <li class="item {% if day in selected_date %}red{% endif %}">
+                                {% if day in selected_date %}
+                                    <span class="common-date" data-value="{{ day|date:'Y-m-d' }}">
+                                        <span>{{ day|date:'D' }}</span>{{ day|date:'d' }}
+                                        <h6>booked</h6>
+                                    </span>
+                                    
+                                {% else %}
+                                    <a href="#" data-value="{{ day|date:'Y-m-d' }}">
+                                        <span>{{ day|date:'D' }}</span>{{ day|date:'d' }}
+                                    </a>
+                                {% endif %}                        
                             {% endfor %}
-
+                            <!-- {% for day in selected_date %}
+                                
+                            <li class="item ">
+                                <a href="#" class="" data-value="{{ day|date:'Y-m-d' }}" ><span>{{day|date:'D' }}</span>{{day|date:'d' }}</a>
+                            </li>
+                        {% endfor %} -->
                         </ul>
                     </div>
                 </div>
@@ -34,108 +56,95 @@
                                 <h3>Breakfast</h3>
                             </div>
                             <div class="menu breakfast">
-                            {% for meal in breakfast %}
-                                <label class="radio">
-                                    <input class="" type="radio" name="selected_breakfast" value="{{ meal.dish_name}}">
-                                    <span class="radio"></span>
-                                    <span class="label">{{ meal.dish_name }}</span>
-                                </label>
-                            {% endfor %}
+                                <ul>
+                                    {% for meal in breakfast %}
+                                        <li class="item">
+                                            <span class="radio">
+                                                <span class="label"></span>
+                                            </span>
+                                            <a href="#" data-value="{{ meal.dish_name }}" >{{ meal.dish_name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
-
                         <div class="item">
                             <div class="menu_head">
                                 <h3>Lunch</h3>
                             </div>
                             <div class="menu lunch">
-                                {% for meal in lunch %}
-                                    <label class="radio">
-                                        <input type="radio" name="selected_lunch" value="{{ meal.dish_name}}">
-                                        <span class="radio"></span>
-                                        <span class="label">{{ meal.dish_name }}</span>
-                                    </label>
-                                {% endfor %}
+                                <ul>
+                                    {% for meal in lunch %}
+                                        <li class="item">
+                                            <span class="radio">
+                                                <span class="label"></span>
+                                            </span>
+                                            <a href="#" data-value="{{ meal.dish_name }}" >{{ meal.dish_name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
                             </div>
                         </div>
-
                         <div class="item">
                             <div class="menu_head">
                                 <h3>Evening Snack</h3>
                             </div>
                             <div class="menu snack" >
-                            
-                                {% for meal in snack %}
-                                    <label class="radio">
-                                        <input type="radio" name="selected_snacks" value="{{ meal.dish_name}}">
-                                        <span class="radio"></span>
-                                        <span class="label">{{ meal.dish_name }}</span>
-                                    </label>
-                                {% endfor %}
-                            </div>
-                            
+                                <ul>
+                                    {% for meal in snack %}
+                                        <li class="item">
+                                            <span class="radio">
+                                                <span class="label"></span>
+                                            </span>
+                                            <a href="#" data-value="{{ meal.dish_name }}" >{{ meal.dish_name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>      
                         </div>
                         <div class="item">
                             <div class="menu_head">
                                 <h3>Dinner</h3>
                             </div>
                             <div class="menu dinner">
-                                {% for meal in dinner %}
-                                    <label class="radio">
-                                        <input type="radio" name="selected_dinner" value="{{ meal.dish_name}}">
-                                        <span class="radio"></span>
-                                        <span class="label">{{ meal.dish_name }}</span>
-                                    </label>
-                                {% endfor %}
+                                <ul>
+                                    {% for meal in dinner %}
+                                        <li class="item">
+                                            <span class="radio">
+                                                <span class="label"></span>
+                                            </span>
+                                            <a href="#" data-value="{{ meal.dish_name }}" >{{ meal.dish_name }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
                             </div>     
                         </div>
-
                         <div class="ready">
-                            <a href="" class="button">make order</a>
-                        </div>
-                      
-                        
-                        
-                        
-                </div>
-                
+                            <button href="" class="button">make Selection</button>
+                        </div>  
+                </div>  
                 <div class="duplicate">
-                    <h2> Please Confirm Your Selection :</h2>
-                    
-                    <div class="selection">
-                        <label for="selected_input_breakfast">selected breakfast is :</label>
-                        <input readonly id="selected_input_breakfast">
-                        <a href="#" class="b_delete">chang selection</a>
-                    </div>
-
-                    <div class="selection">
-                        <label for="selected_input_lunch">selected lunch is :</label>  
-                        <input readonly id="selected_input_lunch">
-                        <a href="#" class="b_delete">chang selection</a>
-                    </div>
-
-                    <div class="selection">
-                        <label for="selected_input_snack">selected snack is :</label>
-                        <input readonly id="selected_input_snack">
-                        <a href="#" class="b_delete">chang selection</a>
-                    </div>
-
-                    <div class="selection">
-                        <label for="selected_input_dinner">selected dinner is :</label>
-                        <input readonly id="selected_input_dinner">
-                        <a href="#" class="b_delete">chang selection</a>
-                    </div>
-
-                    <div class="submit">
-                        <button type="submit"> submit </button>
-            </div>
-
-                </div>
-                
+                    <form class="ajax redirect" action="" method="post">
+                    {% csrf_token %}
+                        <h2> Please Confirm Your Selection :</h2>
+                        {% for field in form %}
+                        <div class="selection">
+                            <label for="{{field.id_for_label}}">{{field.label}}</label>
+                            {{field}}
+                            <span class="delete {% cycle 'date' 'breakfast' 'lunch' 'snack' 'dinner' %}">Delete Selection</span>
+                        </div>
+                        {% endfor %}
+                        <div class="submit">
+                            <p class="error_message"></p>
+                            <button type="submit"> submit </button>
+                        </div>
+                    </form>
+                </div> 
         </section>
     </section>
-
     <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{% static 'js/script.js' %}"></script>
+
 </body>
 </html>
