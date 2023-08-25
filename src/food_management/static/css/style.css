@@ -20,6 +20,9 @@ button.submit :hover{
 a.button:hover{
     opacity: .7;
 }
+section#main{
+    height: 100vh;
+}
 
 section#login{
     background-color: #0d66b9;
@@ -160,54 +163,88 @@ section#login div.input_container{
  header{
     display: flex;
     justify-content: space-between;
-    padding: 40px;
+    padding: 35px;
     background-color: #0d66b9;
-    height: 80px;
+    height: 40px;
     align-items: center;
     position:relative;
 
  }
- header div.nav{
+ header div.navcontainer{
     position: absolute;
     top: 0;
-    right: -900px;
-    width: 450px;
-    height: 200vh;
-    background-color: #727272;
-    padding: 40px;
-    transition: top .5s ease, right .5s ease;
+    right: -3000px;
+    transition: top 1.5s ease, right 1.5s ease;
+    height: 100vh;
 
  }
+ header div.navcontainer.active{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 150vh;
+    transition: top 1s ease, right 1s ease;
+
+
+ }
+ header div.navcontainer div.hide{
+    width:1500px;
+    height: 100%;
+    background-color: #6d6969;
+    opacity: .3;
+
+ }
+ header div.nav{
+    width: 450px;
+    height: 100%;
+    background-color: #727272;
+    padding: 40px;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+
+ }
+ header div.nav div.top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+ }
+
  header div.nav div.close{
     width: 50px;
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 
 
  }
  header div.nav div.close span.close{ 
-    width: 25px;
-    height: 25px;
-    border: 1px solid #4f5757;
+    width: 35px;
+    height:35px;
     border-radius: 50%;
-    background-color: #90ed56;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: .8;
+    cursor: pointer;
+  
+ }
+ header div.nav div.close span.close:hover{ 
+    opacity: .5;
+ }
+ header div.nav div.close span.close img{ 
     display: block;
+    width: 28px;
+    background-color: red;
+    border-radius: 50%;
 
 
  }
- header div.active{
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 450px;
-    height: 200vh;
-    background-color: #727272;
-    padding: 40px;
-    transition: top .5s ease, right .5s ease;
 
- }
  header div.nav div.profile{
     display: flex;
     align-items: center;
@@ -310,7 +347,22 @@ section#login div.input_container{
  header section.right{
     display: flex;
 
-    
+ }
+ header section.right a.navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 40px;
+
+ }
+ header section.right a.navbar:hover{
+    opacity: .6;
+
+ }
+ header section.right a.navbar img{
+    width: 30px;
+    display: block;
+
  }
  header section.right a.profile{
     border-radius: 50%;
@@ -388,7 +440,7 @@ section#food_menu div.middle div.tab_head ul li a.active,
     
 }
 section#food_menu div.middle section.tab_body{
-    margin-top:80px;
+    margin-top:50px;
     
 }
 section#food_menu div.middle section.tab_body div.item{
@@ -431,16 +483,19 @@ section#food_menu div.middle section.tab_body div.active ul li h3{
     
 }
 section#food_menu div.middle section.tab_body div.active a{
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
     font-weight: 500;
     background-color: #0d66b9;
     padding: 10px 16px;
     display: inline-block;
-    margin: 30px 0 ;
-    border-radius: 10px;
-    
-    
+    margin-top: 30px ;
+    border-radius: 10px;  
+}
+section#food_menu div.middle section.tab_body div.active a:hover{
+
+    background-color: #80f737;
+
 }
 /* index page completed */
 
@@ -777,7 +832,21 @@ section#bookings div.count h3{
     font-size: 25px;
     font-weight: 600;
     color: #000;
+    margin-bottom: 30px;
     
+}
+section#bookings div.count a.button{
+    padding: 10px 16px;
+    border-radius: 10px;
+    background-color: #0d66b9;
+    color: #fff;  
+    font-weight: 600;
+
+}
+section#bookings div.count a.button:hover{
+
+    background-color: #80f737; 
+    color:#0d66b9;
 }
 section#bookings div.orders{
     border-bottom: 3px solid #727272;

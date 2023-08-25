@@ -2,12 +2,13 @@ $(document).ready(function(){
 
     $("header section.right a.navbar").on("click",function(e){
         e.preventDefault()
-        $("header div.nav").addClass("active") 
+        console.log("hello")
+        $("header div.navcontainer").addClass("active") 
     });
     $("header div.nav div.close span.close").on("click",function(){
         console.log("hello")
 
-        $("header div.nav").removeClass("active") 
+        $("header div.navcontainer").removeClass("active") 
     });
 
 

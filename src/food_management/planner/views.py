@@ -11,7 +11,7 @@ from planner.models import Student
 from planner.forms import OrderForm
 from planner.models import Meal, Order
 
-
+@login_required(login_url = "/user/login/")
 def planner (request):
 
     breakfast = Meal.objects.filter(food_type = "breakfast")
@@ -23,7 +23,7 @@ def planner (request):
     start_date =today
     next_7_days = [today + datetime.timedelta(days=i) for i in range(7)]
     
-    queryset = Order.objects.filter(is_deleted=False).values_list("selected_date", flat=True,)
+    queryset = Order.objects.filter(student__user = request.user,is_deleted=False).values_list("selected_date", flat=True,)
     # selected_date = [date.strftime('%b. %d, %Y') for date in queryset]
     selected_date = list(queryset)
 
@@ -92,57 +92,10 @@ def planner (request):
     return render (request, "planner/planner.html", context = context)
 
 @login_required(login_url = "/user/login/")
-def sample(request) :
-    if request.method == 'POST':
-        form = OrderForm(request.POST)
-        if form.is_valid():
-
-            if not Student.objects.filter(user=request.user).exists():
-                student = Student.objects.create(user = request.user,name = request.user.last_name)
-            else:
-                student = request.user.student
-
-            instance = form.save(commit=False)
-            instance.student = student
-            instance.save()
-
-            response_data = {
-                "message" :"sucessfully submitted",
-                "title" :"sucessfully submitted",
-                "status" : "success",
-                "redirect_url" : "/",
-                "redirect" : "yes"
-            }
-
-            return HttpResponse(json.dumps(response_data),content_type = "application/javascript")
-        else :
-
-            error_message = generate_form_errors(form)
-
-            response_data = {
-                    "message" :str(error_message),
-                    "title" :"please check something error occured",
-                    "status" : "error",
-                    "redirect_url" : "/",
-                    "redirect" : "yes"
-                }
-
-            return HttpResponse(json.dumps(response_data),content_type = "application/javascript")
-
-    else:
-        form = OrderForm()
-
-        context ={
-            "title" : "sample",
-            "form" : form
-        }
-    return render (request, "planner/sample.html",context = context)
-
-@login_required(login_url = "/user/login/")
 def my_orders(request):
     order = Order.objects.filter(student__user = request.user,is_deleted = False )
     today = datetime.date.today()
-    queryset = Order.objects.filter(is_deleted=False).values_list("selected_date", flat=True)
+    queryset = Order.objects.filter(student__user = request.user,is_deleted=False).values_list("selected_date", flat=True)
     # selected_date = [date.strftime('%b. %d, %Y') for date in queryset]
     list_date = list(queryset)
     required_date = [d for d in list_date if d >= today]

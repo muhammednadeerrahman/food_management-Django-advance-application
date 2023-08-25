@@ -24,7 +24,7 @@
          <strong>my bookings : {{required_date|length}}  </strong> <span>orders available</span>   
          {% else %}
          <h3>ohh ! you have not make any orders yet </h3>
-         <a href="{% url 'planner:planner' %}">order meal</a>
+         <a href="{% url 'planner:planner' %}" class="button">Click Here to Make an Order</a>
          {% endif %}
     </div>
     {% for bookings in  order %}
