@@ -101,9 +101,7 @@ def view_profile(request) :
                 "redirect_url" : "/",
                 "redirect" : "yes"
             }
-        return HttpResponse(json.dumps(response_data),content_type = "application/javascript")
-   
-       
+        return HttpResponse(json.dumps(response_data),content_type = "application/javascript")  
     context = {
             "title": "My Profile",
             "student": student,

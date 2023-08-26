@@ -26,15 +26,15 @@
                 <form action="" method="post" class="ajax redirect" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="container">
-                        <div class="input_container">
+                        <div class="input_image">
                             <label for="{{ userform.profile_image.id_for_label }}">{{ userform.profile_image.label }}</label>
                         {{ userform.profile_image }}
                         </div>
-                        <div class="input_container">
+                        <div class="input_cont">
                             <label for="{{ userform.mob_number.id_for_label }}">{{ userform.mob_number.label_tag }}</label>
                             {{ userform.mob_number }}
                         </div>
-                        <div class="input_container">
+                        <div class="input_cont">
                             <label for="{{ userform.student_id.id_for_label }}">{{ userform.student_id.label_tag }}</label>
                             {{ userform.student_id }}
                         </div>   

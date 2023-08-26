@@ -159,7 +159,7 @@ section#login div.input_container{
     display: flex;
     justify-content: space-between;
     padding: 35px;
-    background-color: #0d66b9;
+    background-color: #10589c;
     height: 40px;
     align-items: center;
     position:relative;
@@ -1202,19 +1202,21 @@ div.image_default div.image_container{
 section#profile section.user_data form div.container
  div.image_default{
     margin-bottom: 15px;
+    width: 70% ;
 
     
 }
 section#profile section.user_data form div.container
  div.image_default div.image_container {
     border: 4px solid #4f5757;
+    width: 220px;
     
 }
 section#profile section.user_data form div.container
 div.image_default div.image_container  img{
     display: block;
+    height: 100%;
     width: 100%;
-    height: 100%;  
 }
 section#profile section.user_data form div.container
  div.image_default div.input_container{
@@ -1363,30 +1365,94 @@ section.user_data div.container div.input_container input{
     background-color: #ececec;
 
 }
+div.input_image{
+    width: 70%;
+    border-bottom: 1px solid #727272;
+    padding: 10px 5px;
+}
+div.input_images{
+    width: 100%;
+    border-bottom: 1px solid #727272;
+    padding: 10px  5px;
+    margin: 0 auto;
+}
+div.input_image label{
+   font-size: 16px;
+   font-weight: 600;
+}
+div.input_image input{
+    font-size: 16px;
+    font-weight: 600;
+}
+div.input_cont {
+ border-bottom: 1px solid #727272;
+ padding: 10px  5px;
 
+ width: 70%;
+ display: flex;
+ justify-content: space-between;
+}
+div.input_cont label {
+    font-size: 16px;
+    font-weight: 600;
+   
+}
+div.input_cont input {
+    border-radius: 10px;
+    border: 2px solid #004e97;
+    padding: 3px 5px;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #ececec;
+}
+@media all and (max-width:1380px){
+    section#edit div.meals div.item div.menu ul li{
+        margin-bottom: 30px;
+    }
+    section#plan div.meals div.item div.menu ul li {
+        margin-bottom: 30px;
+    }
 
+}
+@media all and (max-width:1280px){
+    section#plan div.top div.days {
+        display: flex;
+        flex-direction: column;
+    }
+    section#plan div.top div.days h2 {
+       margin-bottom: 30px;
+    }
+   
+    section#profile section.selection {
+        width: 25%;
 
-
-<section class="user_data">
-<form action="" method="post" class="ajax redirect" enctype="multipart/form-data">
-    {% csrf_token %}
-    <div class="container">
-        <div class="input_container">
-            <label for="{{ userform.profile_image.id_for_label }}">{{ userform.profile_image.label }}</label>
-        {{ userform.profile_image }}
-        </div>
-        <div class="input_container">
-            <label for="{{ userform.mob_number.id_for_label }}">{{ userform.mob_number.label_tag }}</label>
-            {{ userform.mob_number }}
-        </div>
-        <div class="input_container">
-            <label for="{{ userform.student_id.id_for_label }}">{{ userform.student_id.label_tag }}</label>
-            {{ userform.student_id }}
-        </div>   
-        <div class="submit_container">    
-            <button type="submit">submit</button>
-        </div>     
-    </div>  
-</form>
-</section>
-
+    }
+    section#profile section.user_data form div.container {
+        width: 65%;
+    }
+    header div.nav {
+        width: 35%;
+    }
+    header div.navcontainer div.hide {
+        width: 65%;
+    }
+    
+}
+@media all and (max-width:1080px){
+    
+}
+@media all and (max-width:980px){
+    
+}
+@media all and (max-width:768px){
+    
+}
+@media all and (max-width:640px){
+    
+}
+@media all and (max-width:480px){
+    
+}
+@media all and (max-width:360px){
+    
+}

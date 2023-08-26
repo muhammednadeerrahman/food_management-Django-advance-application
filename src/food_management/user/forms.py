@@ -34,7 +34,7 @@ class UserForm(forms.ModelForm):
         model = Student
         fields = ["profile_image","student_id","mob_number",]
         widgets = {
-            "student_id" : forms.widgets.PasswordInput(attrs={"required" : "required"}),
+            "student_id" : forms.widgets.TextInput(attrs={"required" : "required"}),
              "mob_number" : forms.widgets.TextInput(attrs = {"required" : "required"}),
         }
         error_messages= {
