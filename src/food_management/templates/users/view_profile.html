@@ -59,7 +59,7 @@
 
                                     <div class="edit">
                                         <label for="mob_number">Mob Number</label>
-                                        <input required type="tel" minlength="10" maxlength="12" name="mob_number" value="{{student.mob_number}}">
+                                        <input required type="tel" minlength="10" maxlength="12" name="mob_number" value="">
                                     </div>
                                     
                                 {% else %}
@@ -74,12 +74,12 @@
 
                                     <div class="edit">
                                         <label for="student_id">Student ID</label>
-                                        <input type="text" name="student_id" value="{{ student.student_id }}">
+                                        <input  required type="text" name="student_id" value="">
                                     </div>
                                    
                                 {% else %}
 
-                                    <h4> Mobile Number : {{request.user.student.student_id}}</h4>
+                                    <h4> Student-ID : {{request.user.student.student_id}}</h4>
                                     <span class="edit"><a href="{% url 'user:edit' %}"><img title="edit.!" src="{% static 'images/icons/pencil.svg' %}" alt="edit_student_id"></a></span>
                                 
                                 {% endif%}

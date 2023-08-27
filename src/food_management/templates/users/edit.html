@@ -9,32 +9,43 @@
 </head>
 <body>
     {% include "web/includes/header.html" %}
-
     <section id="profile">
-        <section class="wrapper">
-            <section class="user_data">
 
+        <section class="data">
+            <section class="selection">
+                <div class="title">
+                    <a href="#" class="button profile"><span>Update Profile</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
+                </div>
+                <div class="reroute">
+                    <a href="{% url 'user:view_profile' %}" class="button"><span>My Profile</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
+                    <a href="{% url 'planner:my_orders' %}" class="button"><span>My orders</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
+                    <a href="{% url 'planner:planner' %}" class="button"><span>Create Order</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
+                </div>
+            </section>
+            <section class="user_data">
                 <form action="" method="post" class="ajax redirect" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="container">
-                        <label for="{{ userform.mob_number.id_for_label }}">{{ userform.mob_number.label_tag }}</label>
-                        {{ userform.mob_number }}
-                        <label for="{{ userform.student_id.id_for_label }}">{{ userform.student_id.label_tag }}</label>
-                        {{ userform.student_id }}
-                        <label for="{{ userform.profile_image.id_for_label }}">{{ userform.profile_image.label }}</label>
+                        <div class="input_container">
+                            <label for="{{ userform.profile_image.id_for_label }}">{{ userform.profile_image.label }}</label>
                         {{ userform.profile_image }}
-                    </div>
-                    <button type="submit">Update Profile</button>
+                        </div>
+                        <div class="input_container">
+                            <label for="{{ userform.mob_number.id_for_label }}">{{ userform.mob_number.label_tag }}</label>
+                            {{ userform.mob_number }}
+                        </div>
+                        <div class="input_container">
+                            <label for="{{ userform.student_id.id_for_label }}">{{ userform.student_id.label_tag }}</label>
+                            {{ userform.student_id }}
+                        </div>   
+                        <div class="submit_container">    
+                            <button type="submit">submit</button>
+                        </div>     
+                    </div>  
                 </form>
-
-
-
             </section>
-
         </section>
-    </section>
-
-   
+</section>
     <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{% static 'js/script.js' %}"></script>

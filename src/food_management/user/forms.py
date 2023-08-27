@@ -33,5 +33,17 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = Student
         fields = ["profile_image","student_id","mob_number",]
+        widgets = {
+            "student_id" : forms.widgets.PasswordInput(attrs={"required" : "required"}),
+             "mob_number" : forms.widgets.TextInput(attrs = {"required" : "required"}),
+        }
+        error_messages= {
+                'student_id' : {
+                        "required" : "enter student-id"
+                        },
+                'mob_number' : {
+                        "required" : "enter mob-number"
+                        },
+        }
         
        

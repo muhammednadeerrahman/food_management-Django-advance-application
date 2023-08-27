@@ -1344,3 +1344,49 @@ section#profile section.user_data form div.container
   div.input span:hover {
    opacity: .7;
 }
+section.user_data div.container div.input_container{
+    margin: 0 auto 20px;
+    width: 70%;
+    border-bottom: 1px solid #727272;
+    padding: 10px;
+}
+section.user_data div.container div.input_container label{
+    font-weight: 600;
+    font-size: 18px;
+}
+section.user_data div.container div.input_container input{
+    border-radius: 10px;
+    border: 2px solid #004e97;
+    padding: 3px 5px;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #ececec;
+
+}
+
+
+
+
+<section class="user_data">
+<form action="" method="post" class="ajax redirect" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+        <div class="input_container">
+            <label for="{{ userform.profile_image.id_for_label }}">{{ userform.profile_image.label }}</label>
+        {{ userform.profile_image }}
+        </div>
+        <div class="input_container">
+            <label for="{{ userform.mob_number.id_for_label }}">{{ userform.mob_number.label_tag }}</label>
+            {{ userform.mob_number }}
+        </div>
+        <div class="input_container">
+            <label for="{{ userform.student_id.id_for_label }}">{{ userform.student_id.label_tag }}</label>
+            {{ userform.student_id }}
+        </div>   
+        <div class="submit_container">    
+            <button type="submit">submit</button>
+        </div>     
+    </div>  
+</form>
+</section>
+
