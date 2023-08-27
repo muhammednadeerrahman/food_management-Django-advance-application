@@ -244,5 +244,97 @@ $(document).ready(function(){
                 Swal.fire(title, message, "error");
             }
         })
-    })
+    });
+
+    $("a.action-button").on("click",function(e){
+        e.preventDefault();
+        console.log("helo")
+        var $this = $(this);
+        var text = $this.attr("data-text");
+        var title = $this.attr("data-title");
+        var confirmButtonText = "Yes";
+        var confirmButtonColor = "#DD6B55";
+        var type = "warning";
+        var url = $this.attr("href");
+        if (!title){
+            title = "are you sure ?";
+        }
+        var isReload = $this.hasClass("reload");
+        var isRedirect = $this.hasClass("redirect");
+        var noResponsePopup = $this.hasClass("no-response-popup");
+        swal.fire({
+            icon : type,
+            title: title,
+            text: text,
+            showCancelButton: true,
+            confirmButtonText: confirmButtonText,
+            confirmButtonColor: confirmButtonColor,
+        }).then((result) =>{
+            if (result.isConfirmed){
+                Swal.showLoading();
+                window.setTimeout(function(){
+                    $.ajax({
+                        type : "get",
+                        url : url,
+                        dataType: "json",
+                        success: function(data){
+                            var message = data["message"]
+                            var status = data["status"]
+                            var redirect = data["redirect"]
+                            var redirect_url = data["redirect_url"]
+                            var stable = data["stable"]
+                            var title = data["title"]
+
+                            Swal.hideLoading();
+                            if (status == "success") {
+                                if (title) {
+                                    title = title;
+                                } else {
+                                    title = "Success";
+                                }
+
+                                if (!noResponsePopup) {
+                                    Swal.fire({
+                                        icon: "success",
+                                        title: title,
+                                        text: message,
+                                        type: "success",
+                                    }).then((result) => {
+                                        if (stable != "yes") {
+                                            if (isRedirect && redirect == "yes") {
+                                                window.location.href = redirect_url;
+                                            }
+                                            if (isReload) {
+                                                window.location.reload();
+                                            }
+                                        }
+                                    });
+                                }
+
+                            }else {
+                                if (title) {
+                                    title = title;
+                                } else {
+                                    title = "An Error Occurred";
+                                }
+
+                                Swal.fire(title, message, "error");
+
+                                if (stable != "true") {
+                                    window.setTimeout(function () {}, 2000);
+                                }
+                            }
+                        },
+                        error: function(data){
+                            Swal.hideLoading();
+                            var title = "An error occurred";
+                            var message =
+                                "An error occurred. Please try again later.";
+                            Swal.fire(title, message, "error");
+                        }
+                    })
+                },100)
+            }
+        }) 
+        });
 })

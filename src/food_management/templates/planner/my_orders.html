@@ -14,8 +14,12 @@
     <section class="wrapper">
         <div class="count">
             {% if required_date %}
-                <strong>my bookings : {{required_date|length}}  </strong> <span>orders available</span>   
+                {% if required_date|length > 1 %}
+                <strong>my bookings : {{required_date|length}}  </strong> <span>orders available</span> 
                 {% else %}
+                <strong>my bookings : {{required_date|length}}  </strong> <span>order available</span>
+                {% endif %}
+            {% else %}
                 <h3>ohh ! you have not make any orders yet </h3>
                 <a href="{% url 'planner:planner' %}" class="button">Click Here to Make an Order</a>
             {% endif %}
@@ -27,7 +31,7 @@
                         <div class="buttons">
                             <a class="danger action-button reload"
                             href="{% url 'planner:delete_order' id=bookings.id %}"
-                            data-text="Are you sure want to remove this post. You can't undo this action." 
+                            data-text="Are you sure want to delete your order. You can't undo this action." 
                             data-title="Confirm Delete!"
                             title="Delete!">
                                 <img src="{% static 'images/icons/delete.svg' %}" alt="Delete" />

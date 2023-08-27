@@ -114,6 +114,7 @@ def delete_order(request,id):
     instance = get_object_or_404(Order,id=id)
     instance.is_deleted = True
     instance.save()
+    
     request_data = {
         "title" : "successfully deleted",
         "message" : "Order deleted successfully",

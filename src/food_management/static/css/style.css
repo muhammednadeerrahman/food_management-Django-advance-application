@@ -1184,7 +1184,7 @@ section#bookings div.count strong{
 section#bookings div.count span{
     font-weight: 700;
     font-size: 18px;
-    color: #90ed56;
+    color: #ed5656;
 
     
 }
@@ -1221,10 +1221,10 @@ section#bookings div.orders{
     width: 50%;
 }
 section#bookings div.one{
-    border-bottom: 3px solid #a6c8e7;
+    border-bottom: 3px solid #004e97;
 }
 section#bookings div.two{
-    border-bottom: 3px solid #80f737;
+    border-bottom: 3px solid #e4a700;
 }
 section#bookings div.three{
     border-bottom: 3px solid rgb(230, 39, 96);
