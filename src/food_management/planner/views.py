@@ -32,14 +32,9 @@ def planner (request):
     if request.method == 'POST':
         form = OrderForm(request.POST)
         if form.is_valid():
-
-            if not Student.objects.filter(user=request.user).exists():
-                student = Student.objects.create(user = request.user,name = request.user.last_name)
-            else:
-                student = request.user.student
-
-            instances = form.save(commit=False) 
+            student = request.user.student
             
+            instances = form.save(commit=False) 
             instances.student = student
             instances.save()
 
@@ -188,4 +183,4 @@ def edit_order(request,id):
 
         }
 
-        return render (request, "planner/planner.html",context = context)
+        return render (request, "planner/edit_order.html",context = context)

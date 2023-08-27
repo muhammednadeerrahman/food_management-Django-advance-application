@@ -9,46 +9,16 @@
 </head>
 <body>
     {% include "web/includes/header.html" %}
-    <section id="plan">
+    <section id="edit">
         <section class="wrapper">
                 <div class="top">
-                    <div class="date">
-                        <h1>{{ today|date:'l' }}</h1>
-                        <h4>{{ today|date:'d F Y' }}</h4>
-                    </div>
-                    <input type="hidden" name="selected_date" id="selected_date_input">
-                    <input type="hidden" name="selected_bf" id="selected_bf_input">
-                    <input type="hidden" name="selected_lc" id="selected_lc_input">
-                    <input type="hidden" name="selected_snacks" id="selected_sk_input">
-                    <input type="hidden" name="selected_dr" id="selected_dr_input">
-                    <div class="days">
-                        <h2>choose a date to book the meals</h2>
-                        <ul>
-                            
-                            
-                            {% for day in next_7_days %}
-                                
-                            <li class="item {% if day in selected_date %}red{% endif %}">
-                                {% if day in selected_date %}
-                                    <span class="common-date" data-value="{{ day|date:'Y-m-d' }}">
-                                        <span>{{ day|date:'D' }}</span>{{ day|date:'d' }}
-                                        <h6>booked</h6>
-                                    </span>
-                                    
-                                {% else %}
-                                    <a href="#" data-value="{{ day|date:'Y-m-d' }}">
-                                        <span>{{ day|date:'D' }}</span>{{ day|date:'d' }}
-                                    </a>
-                                {% endif %}                        
-                            {% endfor %}
-                            <!-- {% for day in selected_date %}
-                                
-                            <li class="item ">
-                                <a href="#" class="" data-value="{{ day|date:'Y-m-d' }}" ><span>{{day|date:'D' }}</span>{{day|date:'d' }}</a>
-                            </li>
-                        {% endfor %} -->
-                        </ul>
-                    </div>
+                    <div class="for_hide">
+                        <input type="hidden" name="selected_date" id="selected_date_input">
+                        <input type="hidden" name="selected_bf" id="selected_bf_input">
+                        <input type="hidden" name="selected_lc" id="selected_lc_input">
+                        <input type="hidden" name="selected_snacks" id="selected_sk_input">
+                        <input type="hidden" name="selected_dr" id="selected_dr_input">
+                    </div>  
                 </div>
                 <div class="meals">   
                         <div class="item">

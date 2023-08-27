@@ -5,6 +5,7 @@ app_name = "planner"
 
 urlpatterns = [
     path('planner/',views.planner, name = "planner"),
+    path('edit_order/',views.edit_order, name = "edit_order"),
     path('my_orders/',views.my_orders, name = "my_orders"),
     # path('sample/',views.sample, name = "sample"),
     path('delete/<int:id>/',views.delete_order, name = "delete_order"),

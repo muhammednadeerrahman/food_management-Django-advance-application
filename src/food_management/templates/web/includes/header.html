@@ -15,9 +15,6 @@
         <div class="nav">
             <div class="top">
                 <div class="close">
-                    <span class="close" title="close navar !">
-                        <img src="{% static 'images/icons/close.png' %}" alt="">
-                    </span>
                 </div>
                 <div class="log">
                     {% if request.user.is_authenticated %}
@@ -30,25 +27,26 @@
             
             <div class="profile">
                 <span class="image">
-                    <img src="" alt="">
+                    {% if request.user.student.profile_image %}
+                    <img src="{{request.user.student.profile_image.url}}" alt="">
+                    {% else %}
+                    <img src="{% static 'images/icons/profile.jpg' %}" style="background-color: #fff;" alt="">
+                    {% endif %}
+
                 </span>
                 <h1>
-                    {% if request.user.is_authenticated %}
-                    {{request.user.first_name}} {{request.user.last_name}}
-                    {% endif %} 
+                    {{request.user.student.name}} 
                 </h1>
                 <h1>
                     {{request.user.student.mob_number}}
-                    123
                 </h1>
-                <a href="" class="button">view profile</a>
+                <a href="{% url 'user:view_profile' %}" class="button">view profile</a>
             </div>
             <div class="list">
-                <a href="{% url 'planner:my_orders' %}" class="button">My Orders</a>
+                <a href="{% url 'planner:my_orders' %}" class="button"><span>My orders</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
+                <a href="{% url 'planner:planner' %}" class="button"><span>Create Order</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
             </div>
-            <div class="list">
-                <a href="{% url 'planner:planner' %}" class="button">make new order</a>
-            </div>
+
         
 
         </div>

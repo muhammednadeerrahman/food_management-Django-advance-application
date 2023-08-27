@@ -5,14 +5,14 @@ $(document).ready(function(){
         console.log("hello")
         $("header div.navcontainer").addClass("active") 
     });
-    $("header div.nav div.close span.close").on("click",function(){
+    $("header div.navcontainer div.hide").on("click",function(){
         console.log("hello")
 
         $("header div.navcontainer").removeClass("active") 
     });
 
 
-    $("section#plan ul li a").on("click", function(event){
+    $("section#plan ul li a, section#edit ul li a").on("click", function(event){
         event.preventDefault();});
        
 
@@ -27,7 +27,7 @@ $(document).ready(function(){
 
     });
 
-    $("section#plan div.meals div.breakfast ul li").on("click",function(){
+    $("section#plan div.meals div.breakfast ul li, section#edit div.meals div.breakfast ul li").on("click",function(){
         var $this = $(this);
         $this.addClass("active") 
        $this.siblings().removeClass("active")
@@ -38,7 +38,7 @@ $(document).ready(function(){
 
     });
 
-    $("section#plan div.meals div.lunch ul li").on("click",function(){
+    $("section#plan div.meals div.lunch ul li, section#edit div.meals div.lunch ul li").on("click",function(){
         var $this = $(this);
         $this.addClass("active") 
         $this.siblings().removeClass("active")
@@ -49,7 +49,7 @@ $(document).ready(function(){
 
     });
 
-    $("section#plan div.meals div.snack ul li").on("click",function(){
+    $("section#plan div.meals div.snack ul li, section#edit div.meals div.snack ul li").on("click",function(){
         var $this = $(this);
         $this.addClass("active") 
         $this.siblings().removeClass("active")
@@ -60,7 +60,7 @@ $(document).ready(function(){
 
     });
 
-    $("section#plan div.meals div.dinner ul li").on("click",function(){
+    $("section#plan div.meals div.dinner ul li, section#edit div.meals div.dinner ul li").on("click",function(){
         var $this = $(this);
         $this.addClass("active") 
         $this.siblings().removeClass("active")
@@ -96,12 +96,32 @@ $(document).ready(function(){
         console.log(selected_breakfast +"hi")
         $("input#selected_input_dinner").val(selected_dinner);
         
+    });
+    $("section#edit div.ready button").on("click", function(e) {
+        e.preventDefault()
+
+        let selected_breakfast = $("input#selected_bf_input").val();
+        console.log(selected_breakfast +"hi")
+        $("input#selected_input_breakfast").val(selected_breakfast);
+
+        let selected_lunch = $("input#selected_lc_input").val();
+        console.log(selected_breakfast +"hi")
+        $("input#selected_input_lunch").val(selected_lunch);
+
+        let selected_snack = $("input#selected_sk_input").val();
+        console.log(selected_breakfast +"hi")
+        $("input#selected_input_snack").val(selected_snack);
+
+        let selected_dinner = $("input#selected_dr_input").val();
+        console.log(selected_breakfast +"hi")
+        $("input#selected_input_dinner").val(selected_dinner);
+        
 
       
     
     });
     
-    $("section#plan div.duplicate span").on("click", function(e) {
+    $("section#plan div.duplicate span, section#edit div.duplicate span").on("click", function(e) {
         var  $this = $(this);
         console.log("clear date")
         $this.siblings("input").val("");
@@ -117,43 +137,6 @@ $(document).ready(function(){
        $(`#${clicked_tab}`).addClass("active");
 
     });
-
-    // $(document).on("submit", "form.ajax", function (e) {
-    //     e.preventDefault();
-    //     var $this = $(this);
-
-    //    var method = $this.attr("method");
-    //    var url = $this.attr("action");
-
-    //    $.ajax({
-    //     type :method,
-    //     url : url, 
-    //     dataType : "json",
-    //     data : new FormData(this),
-    //     processData :false,
-    //     contentType : false,
-    //     cache : false,
-    //     success : function(data){
-    //         console.log(data);
-    //         var  title = data.title;
-    //         var message = data.message;
-    //         var status = data.status
-    //         Swal.fire({
-    //             icon: status,
-    //             title: title,
-    //             text: message
-    //           });
-    //         if (status == "success"){
-    //            $this.trigger("reset")
-    //           }
-    //     },
-    //     error : function(error){
-    //         console.log("error")
-    //     }
-
-    //    })
-    // });
-
 
     $(document).on("submit", "form.ajax", function (e) {
         e.preventDefault()

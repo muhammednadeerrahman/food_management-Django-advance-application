@@ -8,8 +8,56 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>my profile</h1>
-    <a href="">edit profile</a>
+    {% include "web/includes/header.html" %}
+
+    <section id="profile">
+        <section class="wrapper">
+            <section class="user_data">
+
+   
+                <form action="" method="post" class=" " enctype="multipart/form-data">
+              
+                    {% csrf_token %}
+                    <div class="container">
+                        {% if  not request.user.student.mob_number %}
+                            <label for="mob_number">Mobile Number</label>
+                            <input required type="tel" maxlength="12" name="mob_number" value="{{ student.mob_number }}">
+                        {% else %}
+                            {{request.user.student.mob_number}} <span class="edit"><a href="{% url 'user:edit' %}">hello edit number</a></span>
+                        {% endif%}
+
+                        <br>
+
+                        {% if  not request.user.student.student_id %}
+                            <label for="student_id">Student ID</label>
+                            <input required type="text" name="student_id" value="{{ student.student_id }}">
+                        {% else %}
+                            {{request.user.student.student_id}}<span class="edit"><a href="{% url 'user:edit' %}">hello edit student_id</a></span>
+                        {% endif%}
+
+                         <br>
+
+                         {% if not request.user.student.profile_image %}
+                            <label for="profile_image">Student Image</label>
+                            <input type="file" name="profile_image" accept="image/*">
+                        {% else %}
+                            <img src="{{ request.user.student.profile_image.url }}" alt="Student Image">
+                            <span class="edit"><a href="{% url 'user:edit' %}">Edit Profile Image</a></span>
+                        {% endif %}
+                    </div>
+                    {% if not request.user.student.mob_number or request.user.student.student_id or request.user.student.profile_image %}
+                        <button type="submit">Update Profile</button>
+                    {% endif %}
+                </form>
+
+
+
+
+            </section>
+
+        </section>
+    </section>
+
    
     <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
