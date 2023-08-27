@@ -37,9 +37,13 @@
                 <h1>
                     {{request.user.student.name}} 
                 </h1>
-                <h1>
-                    {{request.user.student.mob_number}}
-                </h1>
+
+                {% if request.user.student.mob_number %}
+                    <h1>
+                        {{request.user.student.mob_number}}
+                    </h1>
+                {% endif %}
+
                 <a href="{% url 'user:view_profile' %}" class="button">view profile</a>
             </div>
             <div class="list">

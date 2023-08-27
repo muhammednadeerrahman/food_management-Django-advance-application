@@ -11,51 +11,92 @@
     {% include "web/includes/header.html" %}
 
     <section id="profile">
-        <section class="wrapper">
-            <section class="user_data">
 
-   
-                <form action="" method="post" class=" " enctype="multipart/form-data">
-              
-                    {% csrf_token %}
-                    <div class="container">
-                        {% if  not request.user.student.mob_number %}
-                            <label for="mob_number">Mobile Number</label>
-                            <input required type="tel" maxlength="12" name="mob_number" value="{{ student.mob_number }}">
-                        {% else %}
-                            {{request.user.student.mob_number}} <span class="edit"><a href="{% url 'user:edit' %}">hello edit number</a></span>
-                        {% endif%}
-
-                        <br>
-
-                        {% if  not request.user.student.student_id %}
-                            <label for="student_id">Student ID</label>
-                            <input required type="text" name="student_id" value="{{ student.student_id }}">
-                        {% else %}
-                            {{request.user.student.student_id}}<span class="edit"><a href="{% url 'user:edit' %}">hello edit student_id</a></span>
-                        {% endif%}
-
-                         <br>
-
-                         {% if not request.user.student.profile_image %}
-                            <label for="profile_image">Student Image</label>
-                            <input type="file" name="profile_image" accept="image/*">
-                        {% else %}
-                            <img src="{{ request.user.student.profile_image.url }}" alt="Student Image">
-                            <span class="edit"><a href="{% url 'user:edit' %}">Edit Profile Image</a></span>
-                        {% endif %}
+            <section class="data">
+                <section class="selection">
+                    <div class="title">
+                        <a href="#" class="button profile"><span>Profile</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
                     </div>
-                    {% if not request.user.student.mob_number or request.user.student.student_id or request.user.student.profile_image %}
-                        <button type="submit">Update Profile</button>
-                    {% endif %}
-                </form>
+                    <div class="reroute">
+                        <a href="{% url 'planner:my_orders' %}" class="button"><span>My orders</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
+                        <a href="{% url 'planner:planner' %}" class="button"><span>Create Order</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
+                    </div>
+                </section>
+                <section class="user_data">
+                    <form action="" method="post" class=" " enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="container">
+                            <div class="image_default">
+                                {% if not request.user.student.profile_image %}
 
+                                    <div class="image_container">
+                                        <img src="{% static 'images/icons/profile.jpg' %}" style="background-color: #fff;" alt="">
+                                    </div>
+                                    <div class="input_container">
+                                        <label for="profile_image">Upload photo : </label>
+                                        <input type="file" name="profile_image" accept="image/*">
+                                    </div>
 
+                                {% else %}
 
+                                    <div class="image_container">
+                                        <img src="{{ request.user.student.profile_image.url }}" alt="Student Image">
+                                    </div>
+                                    <div class="input_container" >
+                                        <span class="edit"><a href="{% url 'user:edit' %}">Change Profile Image 
+                                            <img  src="{% static 'images/icons/pencil.svg' %}" alt="profile_image_edit" title="edit.!"></a></span>
+                                    </div>
 
+                                {% endif %}
+                            </div>
+                            <div class="details">
+                                <h4>First Name : {{request.user.first_name}}</h4>
+                                <h4>Last Name : {{request.user.last_name}}</h4>
+                                <h4>Email : {{request.user.email}}</h4>
+                            </div>
+                            <div class="input">
+                                {% if  not request.user.student.mob_number %}
+
+                                    <div class="edit">
+                                        <label for="mob_number">Mob Number</label>
+                                        <input required type="tel" minlength="10" maxlength="12" name="mob_number" value="{{student.mob_number}}">
+                                    </div>
+                                    
+                                {% else %}
+                                
+                                    <h4>Mobile Number : {{request.user.student.mob_number}}</h4>
+                                    <span class="edit"><a href="{% url 'user:edit' %}"><img src="{% static 'images/icons/pencil.svg' %}" alt="edit_number" title="edit.!"></a></span>
+                                
+                                {% endif%}
+                            </div>
+                            <div class="input">
+                                {% if  not request.user.student.student_id %}
+
+                                    <div class="edit">
+                                        <label for="student_id">Student ID</label>
+                                        <input type="text" name="student_id" value="{{ student.student_id }}">
+                                    </div>
+                                   
+                                {% else %}
+
+                                    <h4> Mobile Number : {{request.user.student.student_id}}</h4>
+                                    <span class="edit"><a href="{% url 'user:edit' %}"><img title="edit.!" src="{% static 'images/icons/pencil.svg' %}" alt="edit_student_id"></a></span>
+                                
+                                {% endif%}
+                            </div>      
+                            <div class="submit_container">
+                                {% if not request.user.student.mob_number or notrequest.user.student.student_id or  not request.user.student.profile_image %}
+                                    
+                                    <button type="submit">submit</button>
+
+                                {% endif %}
+                            </div>               
+                        </div>
+                        
+                        
+                    </form>
+                </section>
             </section>
-
-        </section>
     </section>
 
    

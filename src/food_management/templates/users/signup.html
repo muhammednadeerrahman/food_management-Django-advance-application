@@ -19,26 +19,28 @@
             </div>
             <div class="bottom">
                 <form action="" method="post">
-                {% csrf_token %}
+                    {% csrf_token %}
                     <div class="top">
-                        <div class="left">
+                        <div class="right">
                             {% for field in form %}
-                            <div class="input_container">
-                                <label for="field.id_for_label">{{field.label}}</label>
-                                {{field}}
-                            </div>
-                            {% endfor %}
 
+                                <div class="input_container">
+                                    <label for="field.id_for_label">{{field.label}}</label>
+                                    {{field}}
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                        <div class="submit_container">
+                            {% if error %}
+                            <p class="error_message">{{message}}</p>
+                            {% endif %}
+                            <button class="submit" type="submit">Log In</button>
+                        </div>
                     </div>
-                    <div class="submit_container">
-                        {% if error %}
-                        <p class="error_message">{{message}}</p>
-                        {% endif %}
-                        <button class="submit" type="submit">Log In</button>
-                    </div>
-                    
-                   
                 </form>
+                <span>already have an acount ?</span>
+                <a href="{% url 'user:login' %}">Login</a>
             </div>
         </section>
     </section>

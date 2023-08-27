@@ -30,7 +30,6 @@ section#login{
     display: flex;
     justify-content: space-around;
     height: 100vh;
-
     
 }
 section.title{
@@ -56,13 +55,12 @@ section.title h3{
     margin-top: 20px;
     font-size: 18px;
     font-weight: 400;
-    
 }
 
-section#login section.{
-    background-color: #fff;
+section#login section.form{
     padding: 30px;
     border-radius: 8px;
+    width: 30%;
 
 }
 
@@ -76,38 +74,44 @@ section#login div.top h1 {
 }
 
 section#login div.bottom{
-
-    
+   
 }
-section#login div.bottom {
-
-    
+section#login div.bottom form{
+  
 }
-section#login div.bottom  div.top{
-    display: flex;
-    justify-content: space-between;
-
+section#login div.bottom div.top{
 
 }
+section#login div.bottom span{
+    color: #000;
+    font-weight: 600;font-size: 14px;
+}
+section#login div.bottom a{
+    color: #1d4206;
+}
+section#login div.bottom a:hover{
+    color: #80f737;
+}
 
-section#login div.bottom   div.top div.left{
+section#login div.bottom div.top div.left{
     margin-right: 20px;
 
-
-    
 }
 section#login div.bottom  div.top div.right{
-
-
-    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+}
+section#login div.bottom  div.top div.right div.input_container{
+    width: 45%;
+  
 }
 section#login div.bottom label{
     font-size: 18px;
     font-weight: 500;
 
 }
- 
- 
 section#login div.bottom input{
    width: 100%;
    padding: 10px;
@@ -115,13 +119,9 @@ section#login div.bottom input{
    outline: none;
    border-style: solid ;
    border-color: #0d66b9;
-
-
 }
 section#login div.bottom input :hover{
     opacity: .5;
- 
- 
  }
 section#login div.input_container{
     margin-bottom: 30px;
@@ -143,19 +143,14 @@ section#login div.input_container{
     padding: 10px;
     border: none;
     margin-bottom: 20px;
-    cursor: pointer;
-
-     
+    cursor: pointer; 
  }
  button :hover{
-   background-color: #0d66b9;
-
-     
+   background-color: #0d66b9;  
  }
  section#login div.submit_container a{
     justify-self: flex-end;
     align-self:center ;
-
  }
 
  /* login and logout section completed */
@@ -187,8 +182,6 @@ section#login div.input_container{
     width: 105vw;
 
     transition: top 1s ease, right 1s ease;
-
-
  }
  header div.navcontainer div.hide{
     width:72%;
@@ -221,9 +214,6 @@ section#login div.input_container{
     display: flex;
     justify-content: center;
     align-items: center;
-    
-
-
  }
  header div.nav div.close span.close{ 
     width: 35px;
@@ -244,8 +234,6 @@ section#login div.input_container{
     width: 28px;
     background-color: red;
     border-radius: 50%;
-
-
  }
 
  header div.nav div.profile{
@@ -254,7 +242,6 @@ section#login div.input_container{
     justify-content: center;
     flex-direction: column;
     margin-bottom: 40px;
-    
 
  }
  header div.nav div.profile span.image{
@@ -265,7 +252,6 @@ section#login div.input_container{
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
-
 
  }
  header div.nav div.profile span.image img{
@@ -295,25 +281,19 @@ section#login div.input_container{
  header div.nav div.profile a.button:hover{
     background-color: #80f737;
     color: #0d66b9;
-
-
-
  }
 
- header div.nav div.list{
+ header div.nav div.list,div.reroute,div.title{
     background-color: #eee;
     margin: 0 10px;
 
  }
- header div.nav div.list a.button:last-child{
-
+ header div.nav div.list a.button:last-child,div.reroute a.button:last-child{
     border-bottom:none;
-
-
  }
 
 
- header div.nav div.list a.button{
+ header div.nav div.list a.button,div.reroute a.button{
     display: flex;
     padding: 10px;
     width: 100%;
@@ -321,10 +301,8 @@ section#login div.input_container{
     color: #4f5757;
     border-bottom: 1px solid #727272;
     align-items: center;justify-content: space-between;
-
-
  }
- header div.nav div.list a.button span{
+ header div.nav div.list a.button span,div.reroute a.button span,div.title a.button span{
     padding: 10px;
     display: block;
     font-size: 16px;
@@ -333,7 +311,7 @@ section#login div.input_container{
     color: #4f5757;
 
  }
- header div.nav div.list a.button img{
+ header div.nav div.list a.button img, div.reroute a.button img, div.title a.button img{
     margin-left: 50px;
     width: 15px;
     height: 10px;
@@ -347,7 +325,6 @@ section#login div.input_container{
     justify-content: end;
     display: flex;
     
-
  }
 
  header div.nav div.log a.button{
@@ -356,7 +333,6 @@ section#login div.input_container{
     font-size: 18px;
     font-weight: 500;
     font-weight: 600;
-
  }
  header div.nav div.log a.button:hover{
     color: #80f737;
@@ -441,6 +417,7 @@ section#food_menu{
 }
 section#food_menu div.title{
     margin-bottom: 30px;
+    background-color: #fff;
     
 }
 section#food_menu div.title h1{
@@ -457,9 +434,7 @@ section#food_menu div.middle div.tab_head{
 }
 section#food_menu div.middle div.tab_head ul{
     display: flex;
-    justify-content: space-between;
-
-    
+    justify-content: space-between;  
 }
 section#food_menu div.middle div.tab_head ul li{
     width: 25%;
@@ -485,8 +460,7 @@ section#food_menu div.middle section.tab_body{
 }
 section#food_menu div.middle section.tab_body div.item{
     display: none;
-
-    
+  
 }
 section#food_menu div.middle section.tab_body div.active{
     color: #0d66b9;
@@ -499,28 +473,20 @@ section#food_menu div.middle section.tab_body div.active ul{
     
 }
 section#food_menu div.middle section.tab_body div.active ul li{
-
-    width: 30%;
-    
-    
+    width: 30%; 
 }
-section#food_menu div.middle section.tab_body div.active ul li img{
-    
+section#food_menu div.middle section.tab_body div.active ul li img{ 
     display: block;
     width: 100%;
     height: 240px;
     border-radius: 12px;
-    margin-bottom: 20px;
-
-    
+    margin-bottom: 20px;  
 }
 section#food_menu div.middle section.tab_body div.active ul li h3{
     font-size: 18px;
     font-weight: 600;
     color: #727272;
     margin-left: 40px;
-    
-    
 }
 section#food_menu div.middle section.tab_body div.active a{
     font-size: 16px;
@@ -541,8 +507,6 @@ section#food_menu div.middle section.tab_body div.active a:hover{
 
 section#plan{
     padding: 40px 0;
-   
-
 }
 
 section#plan div.top{
@@ -568,17 +532,13 @@ section#plan div.top div.days{
 }
 section#plan div.top div.days{
     align-items: center;
-    margin: 30px 0;
-    
-    
+    margin: 30px 0;  
 }
 section#plan div.top div.days ul{
     width: 60%;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-
-    
 }
 section#plan div.top div.days ul li.item{
     background-color: #fff;
@@ -590,10 +550,7 @@ section#plan div.top div.days ul li.item{
     padding: 15px;
     align-items: center;
     display: flex;
-    justify-content: center;
-
-
-    
+    justify-content: center; 
 }
 section#plan div.top div.days ul li.active{
     background-color: #0d66b9;
@@ -607,28 +564,22 @@ section#plan div.top div.days ul li.active{
     display: flex;
     justify-content: center;
     font-size: 16px;
-    font-weight: 600;
-
-
-    
+    font-weight: 600;  
 }
 section#plan div.top div.days ul li.item a{
     color: #0d66b9;
-    display: block;
-    
+    display: block; 
 }
 
 section#plan div.top div.days ul li.item span.common-date{
     font-size: 15px;
     font-weight: 700;
-
     display: block;
 }
 section#plan div.top div.days ul li.red{
     background-color: red;
     color: #fff;
-    border: 1px solid red;
-    
+    border: 1px solid red;  
 }
 section#plan div.top div.days ul li.red a{
     color: #fff;
@@ -636,14 +587,10 @@ section#plan div.top div.days ul li.red a{
 }
 section#plan div.top div.days ul li.active a{
     color: #fff;
-    display: block;
-    
+    display: block;  
 }
 section#plan div.top div.days ul li a span{
-    display: block;
-
-    
-    
+    display: block; 
 }
 section#plan div.meals{
     background-color: #b6b5b5;
@@ -664,9 +611,7 @@ section#plan div.meals  div.item div.menu_head{
 section#plan div.meals div.item div.menu_head h3{
     font-weight: 600;
     font-size: 25px;
-    color:#fff;
-    
-    
+    color:#fff; 
 }
 section#plan div.meals  div.item div.menu{
     display: flex;
@@ -684,9 +629,7 @@ section#plan div.meals  div.item div.menu ul {
 section#plan div.meals  div.item div.menu ul li{
     display: flex;
     margin-right: 30px;
-    align-items: center;
- 
-        
+    align-items: center;     
 }
 section#plan div.meals  div.item div.menu ul li span.radio{
     margin-right: 15px;
@@ -694,44 +637,31 @@ section#plan div.meals  div.item div.menu ul li span.radio{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid #4f5757;
- 
-        
+    border: 2px solid #4f5757;       
 }
 section#plan div.meals  div.item div.menu ul li.active span.radio{
 
     border: 2px solid #0d66b9;
     display: flex;
     align-items: center;
-    justify-content: center;
- 
-        
+    justify-content: center;      
 }
 section#plan div.meals  div.item div.menu ul li.active span.radio span.label{
 
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #0d66b9;
- 
-        
+    background-color: #0d66b9;    
 }
-section#plan div.meals  div.item div.menu ul li.active{
-
-
-    
+section#plan div.meals  div.item div.menu ul li.active{  
 }
 section#plan div.meals  div.item div.menu ul li a{
     font-weight: 600;
     font-size: 20px;
-    color: #4f5757;
-        
+    color: #4f5757;      
 }
 section#plan div.meals  div.item div.menu ul li.active a{
-
-    color: #0d66b9;
-
-        
+    color: #0d66b9;      
 }
 section#plan div.ready{
     margin-top: 70px;
@@ -748,26 +678,20 @@ section#plan div.ready button{
     font-size: 25px;
     font-weight: 600;
     margin: 0 auto;
-
 }
 section#plan div.ready:hover p.info, section#edit div.ready:hover p.info{
 color: red;
-
 }
 section#plan div.ready p.info, section#edit div.ready p.info{
     color:#b6b5b5 ;
     font-weight: 600;
     font-size: 20px;
     margin-top: 20px;
-    
-
 }
 section#plan div.ready button:hover, section#edit div.ready button:hover{
     background-color:#90ed56 ;
     color: #fff;
     border: 1px solid #90ed56;
-
-
 }
 section#plan div.duplicate{
     border: 3px solid #b6b5b5;
@@ -796,15 +720,11 @@ section#plan div.duplicate span.delete{
     width: 15%;
     background-color: red;
     text-align: center;
-    cursor: pointer;
-    
+    cursor: pointer;  
 }
 section#plan div.duplicate span.delete:hover{
     background-color: #90ed56;
-    color: #0d66b9;
-
- 
-    
+    color: #0d66b9;  
 }
 section#plan div.duplicate label{
     font-size: 20px;
@@ -814,7 +734,6 @@ section#plan div.duplicate label{
 }
 section#plan div.duplicate label::after{
    content: ":";
-
 
 }
 section#plan div.duplicate input{
@@ -852,13 +771,10 @@ section#plan div.duplicate div.submit button:hover{
     border:1px solid #90ed56 ;
     
 }
-
 /* planner page styling completed */
 
-section#edit 
+section#edit{
     padding: 40px 0;
-   
-
 }
 
 section#edit div.top{
@@ -878,23 +794,18 @@ section#edit div.top div.days{
     align-items: center;
     display: flex;
     justify-content: space-between;
-    margin: 30px 0;
-    
+    margin: 30px 0; 
     
 }
 section#edit div.top div.days{
     align-items: center;
     margin: 30px 0;
-    
-    
 }
 section#edit div.top div.days ul{
     width: 60%;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-
-    
 }
 section#edit div.top div.days ul li.item{
     background-color: #fff;
@@ -907,9 +818,6 @@ section#edit div.top div.days ul li.item{
     align-items: center;
     display: flex;
     justify-content: center;
-
-
-    
 }
 section#edit div.top div.days ul li.active{
     background-color: #0d66b9;
@@ -924,14 +832,10 @@ section#edit div.top div.days ul li.active{
     justify-content: center;
     font-size: 16px;
     font-weight: 600;
-
-
-    
 }
 section#edit div.top div.days ul li.item a{
     color: #0d66b9;
-    display: block;
-    
+    display: block;   
 }
 
 section#edit div.top div.days ul li.item span.common-date{
@@ -956,10 +860,7 @@ section#edit div.top div.days ul li.active a{
     
 }
 section#edit div.top div.days ul li a span{
-    display: block;
-
-    
-    
+    display: block;  
 }
 section#edit div.meals{
     background-color: #b6b5b5;
@@ -969,8 +870,7 @@ section#edit div.meals{
     
 }
 section#edit div.meals  div.item{
-    margin-bottom: 20px;
-    
+    margin-bottom: 20px;   
 }
 section#edit div.meals  div.item div.menu_head{
     padding: 5px 20px;
@@ -980,9 +880,7 @@ section#edit div.meals  div.item div.menu_head{
 section#edit div.meals div.item div.menu_head h3{
     font-weight: 600;
     font-size: 25px;
-    color:#fff;
-    
-    
+    color:#fff;   
 }
 section#edit div.meals  div.item div.menu{
     display: flex;
@@ -1001,8 +899,7 @@ section#edit div.meals  div.item div.menu ul li{
     display: flex;
     margin-right: 30px;
     align-items: center;
- 
-        
+       
 }
 section#edit div.meals  div.item div.menu ul li span.radio{
     margin-right: 15px;
@@ -1010,32 +907,24 @@ section#edit div.meals  div.item div.menu ul li span.radio{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    border: 2px solid #4f5757;
- 
-        
+    border: 2px solid #4f5757;      
 }
 section#edit div.meals  div.item div.menu ul li.active span.radio{
 
     border: 2px solid #0d66b9;
     display: flex;
     align-items: center;
-    justify-content: center;
- 
-        
+    justify-content: center;     
 }
 section#edit div.meals  div.item div.menu ul li.active span.radio span.label{
 
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background-color: #0d66b9;
- 
-        
+    background-color: #0d66b9;     
 }
 section#edit div.meals  div.item div.menu ul li.active{
 
-
-    
 }
 section#edit div.meals  div.item div.menu ul li a{
     font-weight: 600;
@@ -1044,10 +933,7 @@ section#edit div.meals  div.item div.menu ul li a{
         
 }
 section#edit div.meals  div.item div.menu ul li.active a{
-
-    color: #0d66b9;
-
-        
+    color: #0d66b9;      
 }
 section#edit div.ready{
     margin-top: 70px;
@@ -1070,8 +956,6 @@ section#edit div.ready button:hover{
     background-color:#90ed56 ;
     color: #fff;
     border: 1px solid #90ed56;
-
-
 }
 section#edit div.duplicate{
     border: 3px solid #b6b5b5;
@@ -1100,8 +984,7 @@ section#edit div.duplicate span.delete{
     width: 15%;
     background-color: red;
     text-align: center;
-    cursor: pointer;
-    
+    cursor: pointer; 
 }
 section#edit div.duplicate span.date{
 display: none;
@@ -1110,9 +993,6 @@ display: none;
 section#edit div.duplicate span.delete:hover{
     background-color: #90ed56;
     color: #0d66b9;
-
- 
-    
 }
 section#edit div.duplicate label{
     font-size: 20px;
@@ -1122,8 +1002,6 @@ section#edit div.duplicate label{
 }
 section#edit div.duplicate label::after{
    content: ":";
-
-
 }
 section#edit div.duplicate input{
     font-weight: 600;
@@ -1163,11 +1041,8 @@ section#edit div.duplicate div.submit button:hover{
 
 /* edit page styling completed */
 
-
 section#bookings{
     padding: 40px;
-    
-
 }
 section#bookings div.count{
     margin-bottom: 50px;
@@ -1176,17 +1051,12 @@ section#bookings div.count{
 section#bookings div.count strong{
     font-weight: 600;
     font-size: 22px;
-    color: #0d66b9;
-
-
-    
+    color: #0d66b9; 
 }
 section#bookings div.count span{
     font-weight: 700;
     font-size: 18px;
-    color: #ed5656;
-
-    
+    color: #ed5656;   
 }
 
 section#bookings div.count h3{
@@ -1261,6 +1131,216 @@ section#bookings div.orders div.buttons a.warning{
 section#bookings div.orders div.buttons a img{
     width: 15px;
     height: 10px;
+}
+section#profile{
+    height: calc(100vh - 70px);
+    background-color: #e9e8e8;
+}
+section#profile section.data{
+    height: 100%;
+    display: flex;
+}
+section#profile section.selection {
+    background-color: #ececec;
+    height: 100%;
+    width: 20%;padding: 10px 0;
+    
+}
+section#profile section.selection div.title {
+    background-color: #e9e8e8;
+    margin-bottom: 20px;
+    margin-right: 0;
+    margin-left: 1px;   
+}
+section#profile section.selection div.title a.button{
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    color: #4f5757;
+    border-bottom: 1px solid #727272;
+    align-items: center;justify-content: space-between;
+    background-color: #fff;
+
+ }
+ section#profile section.selection div.reroute a.button:hover{
+    background-color: #fff;
+ }
+section#profile section.user_data {
+    background-color: #fff;
+    width: 80%;
+    padding-left: 100px;
+    
+}
+section#profile section.user_data form{
+   
+}
+section#profile section.user_data form div.container{
+    margin-bottom: 20px;
+    background-color: #ececec;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;    
+}
+section#profile section.user_data form div.container
+div.image_default div.image_container{
+    margin-bottom: 10px;
 
 
+}
+section#profile section.user_data form div.container
+div.image_default div.image_container{
+    width: 250px;
+    height: 200px;
+    margin: 0 auto 10px;
+
+    
+}
+section#profile section.user_data form div.container
+ div.image_default{
+    margin-bottom: 15px;
+
+    
+}
+section#profile section.user_data form div.container
+ div.image_default div.image_container {
+    border: 4px solid #4f5757;
+    
+}
+section#profile section.user_data form div.container
+div.image_default div.image_container  img{
+    display: block;
+    width: 100%;
+    height: 100%;  
+}
+section#profile section.user_data form div.container
+ div.image_default div.input_container{
+
+
+}
+section#profile section.user_data form div.container
+div.image_default div.input_container label{
+    font-weight: 600;
+    font-size: 16px;
+    margin-left: 20px;
+    
+}
+section#profile section.user_data form div.container
+ div.image_container  div.input_container  input{
+
+ 
+}
+section#profile section.user_data form div.container
+ div.image_container  div.input_container  input{
+
+ 
+}
+section#profile section.user_data form div.container
+ div.image_default  div.input_container span,div.input span{
+    display: flex;
+    align-items: center;
+}
+section#profile section.user_data form div.container
+ div.image_default  div.input_container span a,div.input span a{
+    color: #004e97;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+ 
+}
+section#profile section.user_data form div.container
+ div.image_default  div.input_container span a img,div.input span a img{
+    margin-left: 10px;
+    background-color: #0d66b9;
+    width: 20px;
+    display: block;
+    padding: 5px 5px;
+    border-radius: 8px;
+ 
+}
+section#profile section.user_data form div.details{
+    background-color: #eee;
+    width: 70%;
+}
+section#profile section.user_data form div.details h4{
+    padding: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: capitalize;
+    background-color: #eee;
+    border-bottom: 1px solid #727272;
+ 
+}
+section#profile section.user_data form div.details h4:last-child{
+    text-transform: none;
+}
+div.input{
+    display: flex;
+    background-color: #eee;
+    width: 70%;
+    border-bottom: 1px solid #727272
+}
+div.input div.edit{
+    justify-content: space-between;
+    display: flex;
+    background-color: #eee;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+}
+div.input div.edit label{
+    font-size: 16px;
+    font-weight: 600;
+
+}
+div.input div.edit label::after{
+    content: " :";
+}
+div.input div.edit input{
+    background-color: #ececec;
+    /* border: none; */
+    border-radius: 14px;
+    border: 2px solid #004e97;
+    padding: 8px 3px;
+}
+
+div.input h4{
+    padding: 10px;
+    font-weight: 600;
+    font-size: 18px;
+    text-transform: capitalize;
+    background-color: #eee;
+    
+}
+div.submit_container{
+    margin-top: 30px;
+    width: 40%;
+
+}
+div.submit_container button{
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    background: #004e97;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+
+}
+div.submit_container button:hover{
+color: #004e97;
+background-color: #80f737;
+font-weight: 600;
+
+}
+section#profile section.user_data form div.container
+ div.image_default div.input_container span:hover,
+  div.input span:hover {
+   opacity: .7;
 }
