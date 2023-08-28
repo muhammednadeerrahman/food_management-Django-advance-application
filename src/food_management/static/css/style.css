@@ -60,7 +60,7 @@ section.title h3{
 section#login section.form{
     padding: 30px;
     border-radius: 8px;
-    width: 30%;
+    width: 43%;
 
 }
 
@@ -98,13 +98,14 @@ section#login div.bottom div.top div.left{
 
 }
 section#login div.bottom  div.top div.right{
+    flex-direction: column;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   
 }
 section#login div.bottom  div.top div.right div.input_container{
-    width: 45%;
+    width: 94%;
   
 }
 section#login div.bottom label{
@@ -113,7 +114,7 @@ section#login div.bottom label{
 
 }
 section#login div.bottom input{
-   width: 100%;
+   width: 74%;
    padding: 10px;
    border-radius: 8px;
    outline: none;
@@ -124,11 +125,14 @@ section#login div.bottom input :hover{
     opacity: .5;
  }
 section#login div.input_container{
+    display: flex;
     margin-bottom: 30px;
+    justify-content: space-between;
      
  }
  section#login div.submit_container{
-    display: grid;
+    margin: o auto;
+
  
  }
  section#login div.submit_container p.error_message{
@@ -170,15 +174,16 @@ section#login div.input_container{
     top: 0;
     right: -3000px;
     transition: top 1.5s ease, right 1.5s ease;
-    height: 100vh;
     width: 100vw;
+    
 
  }
  header div.navcontainer.active{
+
     position: absolute;
     top: 0px;
     right: 0px;
-    height: 105vh;
+    height: 1500px;
     width: 105vw;
 
     transition: top 1s ease, right 1s ease;
@@ -214,6 +219,7 @@ section#login div.input_container{
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
  }
  header div.nav div.close span.close{ 
     width: 35px;
@@ -497,6 +503,7 @@ section#food_menu div.middle section.tab_body div.active a{
     display: inline-block;
     margin-top: 30px ;
     border-radius: 10px;  
+    margin-bottom: 20px;
 }
 section#food_menu div.middle section.tab_body div.active a:hover{
 
@@ -1139,10 +1146,11 @@ section#profile{
 section#profile section.data{
     height: 100%;
     display: flex;
+    background-color: #fff
 }
 section#profile section.selection {
     background-color: #ececec;
-    height: 100%;
+    height: 1500px;
     width: 20%;padding: 10px 0;
     
 }
@@ -1318,8 +1326,12 @@ div.input h4{
     
 }
 div.submit_container{
-    margin-top: 30px;
+    margin: 30px auto;
     width: 40%;
+    display: flex;justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 40px;
 
 }
 div.submit_container button{
@@ -1379,7 +1391,12 @@ div.input_images{
 div.input_image label{
    font-size: 16px;
    font-weight: 600;
+   display: block;
+   margin-bottom: 10px;
 }
+div.input_image label::after{
+    content: " :";
+ }
 div.input_image input{
     font-size: 16px;
     font-weight: 600;
@@ -1405,6 +1422,12 @@ div.input_cont input {
     font-size: 16px;
     background-color: #ececec;
 }
+div.input_image img{
+        display: block;
+        width: 250px;
+        height: 200px;
+        margin: 0 auto 20px;
+}
 @media all and (max-width:1380px){
     section#edit div.meals div.item div.menu ul li{
         margin-bottom: 30px;
@@ -1424,11 +1447,11 @@ div.input_cont input {
     }
    
     section#profile section.selection {
-        width: 25%;
+        width: 30%;
 
     }
     section#profile section.user_data form div.container {
-        width: 65%;
+        width: 79%
     }
     header div.nav {
         width: 35%;
@@ -1436,23 +1459,478 @@ div.input_cont input {
     header div.navcontainer div.hide {
         width: 65%;
     }
-    
 }
 @media all and (max-width:1080px){
+    section#login div.bottom div.top div.right div.input_container {
+        width: 100%;
+    }
+    section#profile section.selection {
+        width: 30%;
+    }
+    section#profile section.user_data form div.container {
+        width: 85%
+    }
+    section#login section.form {
+        width: 54%;
+
+    }
+    section.title h3 {
+
+        margin-top: 6px;
+
+    }
     
+
+
 }
 @media all and (max-width:980px){
+    section#food_menu div.middle
+     section.tab_body div.active ul li img {
+        height: 180px;
+    }
+    section#plan div.top div.days ul{
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    section#plan div.top div.days ul li{
+        margin-bottom: 30px;
+        margin-right: 30px;
+        
+    }
+    section#bookings div.orders div.buttons {
+        width: 24%;
+    }
+    section#profile section.selection {
+        width: 35%;
+    }
+    section#plan div.duplicate span.delete {
+        width: 30%;
+
+    }
+    section#edit div.duplicate span.delete {
+        width: 30%;
+
+    }
+    section#profile section.user_data {
+
+        padding-left: 30px;
+    }
+    section#profile section.user_data
+     form div.container {
+        width: 96%;
+    }
+    section#login {
+        display: flex;flex-direction: column;
+    }
+    section#login div.bottom div.top div.right {
+        flex-direction: column;
+    }
+    section#login div.bottom div.top div.right div.input_container {
+        width: 95%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    section#login div.bottom label {
+        margin-right: 0;
+
+    }
+    section#login div.bottom label {
+       white-space: nowrap;
+    }
+    section.title {
+        margin-top: 40px;
+    }
+    
+    
     
 }
 @media all and (max-width:768px){
+    section#food_menu div.middle 
+    section.tab_body div.active
+     ul li img {
+        height: 154px;
+    }
+    header div.nav {
+        width: 44%;
+    }
+    header div.navcontainer div.hide {
+        width: 56%;
+    }
+    section#bookings div.orders {
+        width: 71%;
+    }
+    div.reroute a.button{
+       
+    }
+    header div.nav div.list a.button img, 
+    div.reroute a.button img, div.title 
+    a.button img {
+        margin-left: 0;
+    }
+    div.input_cont,div.input_image {
+        width: 92%;
+    }
+    section#login div.top h1 {
+        font-size: 21px;
+    }
+    div.submit_container {
+        width: 74%;
+    }
+    section#login div.bottom span {
+        font-size: 10px;
+    }
+    section.title span {
+        font-size: 28px;
+    }
+    section.title h1 {
+        font-size: 28px;
+    }
+    section#login {
+        justify-content: start;
+        flex-direction: column;
+
+    }
+    section#login section.form {
+        width: 100%;
+    }
+    section#login div.bottom input {
+        width: 80%;
+    }
+    section#login div.bottom {
+        background-color: #0d66b9;
+    }
+    section#login section.form {
+        background-color: #0d66b9;
+    }
+    section#login div.submit_container button {
+        width: 69%;
+    }
+    section#login div.input_container {
+        margin: 0 auto 30px;
+        display: flex;
+        align-items: center;
+    }
+    section#login div.bottom label {
+        margin-right: 20px;
+    }
+    section#login div.submit_container button {
+        width: 100%;
+
+    }
+ 
+
+
     
 }
 @media all and (max-width:640px){
+    section#login div.bottom input {
+        width: 66%;
+    }
+    section.title span,section.title h1 {
+        font-size: 24px;
+    }
+    section.title h3 {
+        font-size: 14px;
+    }
+    section#login div.top h1 {
+        font-size: 19px;
+    }
+    section#login div.bottom label {
+        font-size: 16px;
+    }
+    section#login div.bottom input {
+        padding: 7px;
+    }
+    section#login div.submit_container button {
+        width: 86%;
+    }
+    section#food_menu div.middle div.tab_head ul li a {
+        font-size: 20px;
+    }
+    section#food_menu div.middle 
+    section.tab_body div.active ul 
+    li img{
+        height: 123px;
+    }
+    header div.nav {
+        width: 51%;
+    }
+    header div.nav div.close{
+
+        display: block;
+     }
+     section#plan div.duplicate span.delete {
+        width: 50%;
+    }
+    section#plan div.duplicate h2 {
+        font-size: 23px;
+    }
+    section#edit div.duplicate span.delete {
+        width: 50%;
+    }
+    section#edit div.duplicate h2 {
+        font-size: 23px;
+    }
+    section#profile section.selection {
+        display: none;
+    }
+    section#profile section.user_data {
+        padding-left: 0px;
+        margin: 0 auto;
+    }
+    section#profile section.user_data form div.container {
+        width: 100%;
+    }
+    section#profile section.user_data {
+        width: 96%;
+
+    }
+    section#bookings div.orders {
+        width: 95%;
+    }
     
 }
 @media all and (max-width:480px){
-    
+    header div.nav {
+        width: 82%;
+    }
+    section#food_menu div.middle div.tab_head ul li a {
+        font-size: 15px;
+    }
+    section#food_menu div.middle section.tab_body div.active ul li img {
+        height: 99px;
+    }
+    header {
+        padding: 7px;
+    }
+    header section.right a.navbar {
+
+        margin-right: 0;
+    }
+    section#plan div.top div.days h2 {
+        font-size: 18px;
+    }
+    section#plan div.meals div.item div.menu ul li a,
+    section#edit div.meals div.item div.menu ul li a {
+        font-weight: 600;
+        font-size: 17px;
+        color: #4f5757;
+    }
+    section#plan div.ready button,
+    section#edit div.ready button {
+        width: 60%;
+        font-size: 14px;
+    }
+    section#plan div.ready p.info, section#edit div.ready p.info,
+    section#edit div.ready p.info, section#edit div.ready p.info {
+        font-size: 11px;
+    }
+    section#plan div.top div.days ul li.item {
+        width: 50px;
+        height: 50px;
+    }
+    section#plan div.top div.days {
+        margin: 15px 0 10px;
+    }
+    section#plan {
+        padding: 22px 0;
+    }
+    section#plan div.top div.date h1,
+    section#plan div.top div.date h4 {
+        font-size: 14px;
+    }
+    section#plan div.ready {
+        margin-top: 20px;
+    }
+    section#plan div.duplicate span.delete {
+        width: 74%;
+    }
+    section#plan div.duplicate div.selection {
+        margin-bottom: 40px;
+    }
+    section#plan div.duplicate div.submit button {
+        padding: 9px 16px;
+        font-size: 16px;
+        width: 63%;
+    }
+    section#plan div.duplicate {
+        margin-top: 20px;
+
+    }
+    section#plan div.top div.days ul li.item {
+        width: 50px;
+        height: 50px;
+    }
+    section#plan div.top div.days {
+        margin: 15px 0 10px;
+    }
+    section#plan {
+        padding: 22px 0;
+    }
+    section#plan div.top div.date h1,
+    section#plan div.top div.date h4 {
+        font-size: 14px;
+    }
+    section#edit div.ready {
+        margin-top: 20px;
+    }
+    section#edit div.duplicate span.delete {
+        width: 74%;
+    }
+    section#edit div.duplicate div.selection {
+        margin-bottom: 40px;
+    }
+    section#edit div.duplicate div.submit button {
+        padding: 9px 16px;
+        font-size: 16px;
+        width: 63%;
+    }
+    section#edit div.duplicate {
+        margin-top: 20px;
+
+    }
+    section#bookings div.orders {
+        width: 100%;
+    }
+    section#bookings div.orders h1 {
+        font-size: 17px;
+    }
+    section#bookings div.orders div.buttons {
+        width: 29%;
+    }
+    section#bookings div.count strong {
+
+        font-size: 16px;
+    }
+    section#bookings div.count span {
+        font-size: 13px;
+    }
+    section#edit div.duplicate input {
+        font-size: 14px;
+    }
+    section#edit div.duplicate label {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    div.input {
+        width: 97%;
+    }
+    section#profile section.user_data form div.details {
+
+        width: 98%;
+    }
+    section.user_data div.container div.input_container {
+        width: 100%;
+
+    }
+    section#edit {
+        padding: 7px 0;
+    }  
+    section.title h3 {
+        margin-top: 14px;
+    }
 }
 @media all and (max-width:360px){
-    
+    section#login div.bottom div.top div.right div.input_container {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+    }
+    section#login {
+        justify-content: start;
+        flex-direction: column;
+        padding: 20px;
+        height: 120vh;
+    }
+    section#food_menu div.middle section.tab_body div.active ul li img {
+        height: 82px;
+    }
+    section#food_menu {
+        margin-top: 20px;
+    }
+    section#food_menu div.title {
+        margin-bottom: 30px;
+
+    }
+    section#food_menu div.title {
+        margin-bottom: 25px;
+    }
+    section#food_menu div.middle section.tab_body {
+        margin-top: 25px;
+    }
+    header div.nav div.profile a.button {
+        padding: 10px 46px;
+        font-size: 18px;
+
+    }
+    section#plan div.top div.days h2 {
+        margin-bottom: 20px;
+    }
+    section#plan div.meals {
+        padding: 18px 20px;
+    }
+    section#plan div.duplicate h2 {
+        font-size: 18px;
+    }
+    section#plan div.duplicate label {
+        font-size: 16px;
+    }
+    section#plan div.duplicate input {
+        margin-top: 15px;
+        font-size: 15px;
+    }
+    section#plan div.duplicate span.delete {
+        width: 61%;
+        font-size: 13px;
+
+    } 
+    section#edit div.meals {
+        padding: 18px 20px;
+    }
+    section#edit div.duplicate h2 {
+        font-size: 18px;
+    }
+    section#edit div.duplicate label {
+        font-size: 16px;
+    }
+    section#edit div.duplicate input {
+        margin-top: 15px;
+        font-size: 15px;
+    }
+    section#edit div.duplicate span.delete {
+        width: 61%;
+        font-size: 13px;
+    } 
+    section#bookings div.orders div.buttons a img {
+        width: 11px;
+        height: 9px;
+    }
+    section#bookings div.orders h1 {
+        font-size: 14px;
+    }
+    div.input div.edit label {
+        font-size: 15px;
+    }
+    div.input h4 {
+        font-size: 15px;
+
+    }
+    div.input div.edit input {
+        border: 1px solid #004e97;
+        padding: 5px 0px;
+    }
+    section#profile section.user_data form div.details h4 {
+        font-size: 15px;
+    }
+    section#login section.form {
+        width: 100%;
+        padding: 0;
+    }
+    section#login div.bottom label {
+        font-size: 13px;
+    }
+
 }

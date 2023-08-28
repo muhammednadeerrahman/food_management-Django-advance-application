@@ -15,6 +15,10 @@
         <div class="nav">
             <div class="top">
                 <div class="close">
+                    <span class="close">
+                        <img src="{% static 'images/icons/close.png' %}" alt="close button">
+                    </span>
+                    
                 </div>
                 <div class="log">
                     {% if request.user.is_authenticated %}

@@ -1,14 +1,29 @@
 $(document).ready(function(){
 
+    $("header div.navcontainer").css("display", "none");
     $("header section.right a.navbar").on("click",function(e){
         e.preventDefault()
-        console.log("hello")
-        $("header div.navcontainer").addClass("active") 
-    });
-    $("header div.navcontainer div.hide").on("click",function(){
-        console.log("hello")
+        $("header div.navcontainer").css("display", "block");
+        function display() {
+            $("header div.navcontainer").addClass("active") 
+        }
+        setTimeout(display,50)
+        
+        
 
-        $("header div.navcontainer").removeClass("active") 
+    });
+
+    $("header div.navcontainer div.hide, header div.navcontainer div.close span.close").on("click",function(){
+        console.log("hello");
+        
+        function hide() {
+            console.log("hello");
+            $("header div.navcontainer").css("display", "none");
+        }
+  
+        $("header div.navcontainer").removeClass("active");
+        setTimeout(hide, 500);
+
     });
 
 
