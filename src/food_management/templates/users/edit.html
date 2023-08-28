@@ -10,7 +10,6 @@
 <body>
     {% include "web/includes/header.html" %}
     <section id="profile">
-
         <section class="data">
             <section class="selection">
                 <div class="title">
@@ -26,14 +25,12 @@
                 <form action="" method="post" class="ajax redirect" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="container">
-                       
-                    
                         <div class="input_image">
+
                             {% if request.user.student.profile_image %}
                                 <img src="{{request.user.student.profile_image.url}}" alt="profile image">
                                 {{ userform.profile_image.label }}
                                 {{ userform.profile_image }}
-
                             {% else %}
                                 <label for="{{ userform.profile_image.id_for_label }}">{{ userform.profile_image.label }}</label>
                                 {{ userform.profile_image }}

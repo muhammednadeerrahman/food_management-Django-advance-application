@@ -8,15 +8,16 @@
     <title>Document</title>
 </head>
 <body>
-    <section class="main">
-        
+    <section class="main"> 
         {% include "web/includes/header.html" %}
         <section id="food_menu">
             <section class="wrapper">
                 <div class="title">
+
                     {% if request.user.is_authenticated %}
                         <h1>Hi {{request.user.student.name}} ! </h1>
                     {% endif %}
+
                     <h1>plan your meal here....</h1>
                 </div>
                 <div class="middle">
@@ -26,12 +27,12 @@
                             <li><a data-id="second_tab" href="javascript:void(0)"  class="">Lunch</a></li>
                             <li><a data-id="third_tab" href="javascript:void(0)"  class="">Snack</a></li>
                             <li><a data-id="fourth_tab" href="javascript:void(0)"  class="">Dinner</a></li>
-
                         </ul>
                         </div>
                         <section class="tab_body">
                             <div id="first_tab" class="item active">
                                 <ul>
+
                                     {% for dish in meal %}
                                         {% if dish.food_image %}
                                         <li>
@@ -39,13 +40,13 @@
                                         </li>
                                         {% endif %}
                                     {% endfor %}
-                                </ul>
-                                <a href="{% url 'planner:planner' %}">Click Here to Order your Meal</a>
-                                
-                            </div>
 
+                                </ul>
+                                <a href="{% url 'planner:planner' %}">Click Here to Order your Meal</a>    
+                            </div>
                             <div id="second_tab" class="item">
                                 <ul>
+
                                     {% for dish in lunch %}
                                         {% if dish.food_image %}
                                         <li>
@@ -53,12 +54,13 @@
                                         </li>
                                         {% endif %}
                                     {% endfor %}
+
                                 </ul>
                                 <a href="{% url 'planner:planner' %}">Click Here to Order your Meal</a>
                             </div>
-
                             <div id="third_tab" class="item">
                                 <ul>
+
                                     {% for dish in snack %}
                                         {% if dish.food_image %}
                                         <li>
@@ -66,12 +68,13 @@
                                         </li>
                                         {% endif %}
                                     {% endfor %}
+
                                 </ul>
                                 <a href="{% url 'planner:planner' %}">Click Here to Order your Meal</a>
                             </div>
-
                             <div id="fourth_tab" class="item">
                                 <ul>
+
                                     {% for dish in dinner %}
                                     {% if dish.food_image %}
                                         <li>
@@ -79,14 +82,12 @@
                                         </li>
                                     {% endif %}
                                     {% endfor %}
+                                    
                                 </ul>
                                 <a href="{% url 'planner:planner' %}">Click Here to Order your Meal</a>
                             </div>
-
                         </section>
                     </section>
-                    
-                    
                 </div>
             </section>
         </section>

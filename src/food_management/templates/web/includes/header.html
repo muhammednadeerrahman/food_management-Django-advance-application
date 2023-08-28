@@ -17,8 +17,7 @@
                 <div class="close">
                     <span class="close">
                         <img src="{% static 'images/icons/close.png' %}" alt="close button">
-                    </span>
-                    
+                    </span>  
                 </div>
                 <div class="log">
                     {% if request.user.is_authenticated %}
@@ -28,13 +27,13 @@
                     {% endif %}
                 </div>
             </div>
-            
             <div class="profile">
                 <span class="image">
+
                     {% if request.user.student.profile_image %}
-                    <img src="{{request.user.student.profile_image.url}}" alt="">
+                        <img src="{{request.user.student.profile_image.url}}" alt="">
                     {% else %}
-                    <img src="{% static 'images/icons/profile.jpg' %}" style="background-color: #fff;" alt="">
+                        <img src="{% static 'images/icons/profile.jpg' %}" style="background-color: #fff;" alt="">
                     {% endif %}
 
                 </span>
@@ -54,10 +53,6 @@
                 <a href="{% url 'planner:my_orders' %}" class="button"><span>My orders</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
                 <a href="{% url 'planner:planner' %}" class="button"><span>Create Order</span> <img src="{% static 'images/icons/scroldown.png' %}" alt=""></a>
             </div>
-
-        
-
         </div>
     </div>
-    
 </header>

@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     $("header div.navcontainer").css("display", "none");
+
     $("header section.right a.navbar").on("click",function(e){
         e.preventDefault()
         $("header div.navcontainer").css("display", "block");
@@ -8,9 +9,6 @@ $(document).ready(function(){
             $("header div.navcontainer").addClass("active") 
         }
         setTimeout(display,50)
-        
-        
-
     });
 
     $("header div.navcontainer div.hide, header div.navcontainer div.close span.close").on("click",function(){
@@ -30,7 +28,6 @@ $(document).ready(function(){
     $("section#plan ul li a, section#edit ul li a").on("click", function(event){
         event.preventDefault();});
        
-
     $("section#plan div.days ul li").on("click",function(){
         var $this = $(this);
         $this.addClass("active") 
@@ -83,7 +80,6 @@ $(document).ready(function(){
 
        var sel_meal = $(this).find("a").data("value");
        $("input#selected_dr_input").val(sel_meal);
-
     });
 
 
@@ -112,6 +108,7 @@ $(document).ready(function(){
         $("input#selected_input_dinner").val(selected_dinner);
         
     });
+
     $("section#edit div.ready button").on("click", function(e) {
         e.preventDefault()
 
@@ -131,9 +128,6 @@ $(document).ready(function(){
         console.log(selected_breakfast +"hi")
         $("input#selected_input_dinner").val(selected_dinner);
         
-
-      
-    
     });
     
     $("section#plan div.duplicate span, section#edit div.duplicate span").on("click", function(e) {

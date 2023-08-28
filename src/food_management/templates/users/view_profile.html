@@ -9,9 +9,7 @@
 </head>
 <body>
     {% include "web/includes/header.html" %}
-
     <section id="profile">
-
             <section class="data">
                 <section class="selection">
                     <div class="title">
@@ -27,8 +25,8 @@
                         {% csrf_token %}
                         <div class="container">
                             <div class="image_default">
-                                {% if not request.user.student.profile_image %}
 
+                                {% if not request.user.student.profile_image %}
                                     <div class="image_container">
                                         <img src="{% static 'images/icons/profile.jpg' %}" style="background-color: #fff;" alt="">
                                     </div>
@@ -36,9 +34,7 @@
                                         <label for="profile_image">Upload photo : </label>
                                         <input type="file" name="profile_image" accept="image/*">
                                     </div>
-
                                 {% else %}
-
                                     <div class="image_container">
                                         <img src="{{ request.user.student.profile_image.url }}" alt="Student Image">
                                     </div>
@@ -46,8 +42,8 @@
                                         <span class="edit"><a href="{% url 'user:edit' %}">Change Profile Image 
                                             <img  src="{% static 'images/icons/pencil.svg' %}" alt="profile_image_edit" title="edit.!"></a></span>
                                     </div>
-
                                 {% endif %}
+
                             </div>
                             <div class="details">
                                 <h4>First Name : {{request.user.first_name}}</h4>
@@ -55,50 +51,43 @@
                                 <h4>Email : {{request.user.email}}</h4>
                             </div>
                             <div class="input">
-                                {% if  not request.user.student.mob_number %}
 
+                                {% if  not request.user.student.mob_number %}
                                     <div class="edit">
                                         <label for="mob_number">Mob Number</label>
                                         <input required type="tel" minlength="10" maxlength="12" name="mob_number" value="">
-                                    </div>
-                                    
+                                    </div> 
                                 {% else %}
-                                
                                     <h4>Mobile Number : {{request.user.student.mob_number}}</h4>
                                     <span class="edit"><a href="{% url 'user:edit' %}"><img src="{% static 'images/icons/pencil.svg' %}" alt="edit_number" title="edit.!"></a></span>
-                                
                                 {% endif%}
+
                             </div>
                             <div class="input">
-                                {% if  not request.user.student.student_id %}
 
+                                {% if  not request.user.student.student_id %}
                                     <div class="edit">
                                         <label for="student_id">Student ID</label>
                                         <input  required type="text" name="student_id" value="">
-                                    </div>
-                                   
+                                    </div>    
                                 {% else %}
-
                                     <h4> Student-ID : {{request.user.student.student_id}}</h4>
                                     <span class="edit"><a href="{% url 'user:edit' %}"><img title="edit.!" src="{% static 'images/icons/pencil.svg' %}" alt="edit_student_id"></a></span>
-                                
                                 {% endif%}
+
                             </div>      
                             <div class="submit_container">
-                                {% if not request.user.student.mob_number or notrequest.user.student.student_id or  not request.user.student.profile_image %}
-                                    
-                                    <button type="submit">submit</button>
 
+                                {% if not request.user.student.mob_number or notrequest.user.student.student_id or  not request.user.student.profile_image %}
+                                    <button type="submit">submit</button>
                                 {% endif %}
+
                             </div>               
                         </div>
-                        
-                        
                     </form>
                 </section>
             </section>
     </section>
-
    
     <script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

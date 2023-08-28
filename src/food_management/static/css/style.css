@@ -1434,7 +1434,6 @@ div.input_image img{
     section#plan div.meals div.item div.menu ul li {
         margin-bottom: 30px;
     }
-
 }
 @media all and (max-width:1280px){
     section#plan div.top div.days {
@@ -1478,9 +1477,6 @@ div.input_image img{
         margin-top: 6px;
 
     }
-    
-
-
 }
 @media all and (max-width:980px){
     section#food_menu div.middle
@@ -1494,8 +1490,7 @@ div.input_image img{
     }
     section#plan div.top div.days ul li{
         margin-bottom: 30px;
-        margin-right: 30px;
-        
+        margin-right: 30px;    
     }
     section#bookings div.orders div.buttons {
         width: 24%;
@@ -1540,10 +1535,7 @@ div.input_image img{
     }
     section.title {
         margin-top: 40px;
-    }
-    
-    
-    
+    }  
 }
 @media all and (max-width:768px){
     section#food_menu div.middle 
@@ -1589,7 +1581,6 @@ div.input_image img{
     section#login {
         justify-content: start;
         flex-direction: column;
-
     }
     section#login section.form {
         width: 100%;
@@ -1617,11 +1608,7 @@ div.input_image img{
     section#login div.submit_container button {
         width: 100%;
 
-    }
- 
-
-
-    
+    }  
 }
 @media all and (max-width:640px){
     section#login div.bottom input {
@@ -1657,7 +1644,6 @@ div.input_image img{
         width: 51%;
     }
     header div.nav div.close{
-
         display: block;
      }
      section#plan div.duplicate span.delete {
@@ -1688,8 +1674,7 @@ div.input_image img{
     }
     section#bookings div.orders {
         width: 95%;
-    }
-    
+    } 
 }
 @media all and (max-width:480px){
     header div.nav {
@@ -1817,12 +1802,10 @@ div.input_image img{
         width: 97%;
     }
     section#profile section.user_data form div.details {
-
         width: 98%;
     }
     section.user_data div.container div.input_container {
         width: 100%;
-
     }
     section#edit {
         padding: 7px 0;
@@ -1852,7 +1835,6 @@ div.input_image img{
     }
     section#food_menu div.title {
         margin-bottom: 30px;
-
     }
     section#food_menu div.title {
         margin-bottom: 25px;
@@ -1863,7 +1845,6 @@ div.input_image img{
     header div.nav div.profile a.button {
         padding: 10px 46px;
         font-size: 18px;
-
     }
     section#plan div.top div.days h2 {
         margin-bottom: 20px;
@@ -1884,7 +1865,6 @@ div.input_image img{
     section#plan div.duplicate span.delete {
         width: 61%;
         font-size: 13px;
-
     } 
     section#edit div.meals {
         padding: 18px 20px;
@@ -1915,7 +1895,6 @@ div.input_image img{
     }
     div.input h4 {
         font-size: 15px;
-
     }
     div.input div.edit input {
         border: 1px solid #004e97;
