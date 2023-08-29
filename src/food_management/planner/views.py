@@ -80,7 +80,8 @@ def planner (request):
         "lunch" : lunch,
         "snack" : snack,
         "dinner" : dinner,
-        "selected_date" : selected_date
+        "selected_date" : selected_date,
+        "title" : "make your order here"
 
         }
 
@@ -99,7 +100,7 @@ def my_orders(request):
 
 
     context = {
-        "title" : "my orders",
+        "title" : "My Orders",
         "order" : order,
         "today" : today,
         "required_date" : required_date
@@ -171,7 +172,7 @@ def edit_order(request,id):
         
         form = OrderForm(instance = instance)
         context = {
-                "title" : "Make order",
+                "title" : "Edit order",
                 "form" : form,
                 "start_date" : start_date,
                 "today" : today,

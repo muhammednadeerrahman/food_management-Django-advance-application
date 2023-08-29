@@ -139,7 +139,7 @@ def edit(request):
         userform = UserForm(instance=student)
 
     context = {
-        "title": "My Profile",
+        "title": "Edit Profile",
         "userform": userform,
     }
     return render (request, "users/edit.html",context=context)
