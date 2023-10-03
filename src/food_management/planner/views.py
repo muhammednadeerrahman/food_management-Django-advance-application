@@ -24,7 +24,7 @@ def planner (request):
     next_7_days = [today + datetime.timedelta(days=i) for i in range(7)]
     
     queryset = Order.objects.filter(student__user = request.user,is_deleted=False).values_list("selected_date", flat=True,)
-    # selected_date = [date.strftime('%b. %d, %Y') for date in queryset]
+    # selected_date = [date.strftime('%b, %d, %Y') for date in queryset]
     selected_date = list(queryset)
 
     print(next_7_days)

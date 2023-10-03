@@ -8,7 +8,7 @@ $(document).ready(function(){
         function display() {
             $("header div.navcontainer").addClass("active") 
         }
-        setTimeout(display,50)
+        setTimeout(display,100)
     });
 
     $("header div.navcontainer div.hide, header div.navcontainer div.close span.close").on("click",function(){
@@ -20,7 +20,7 @@ $(document).ready(function(){
         }
   
         $("header div.navcontainer").removeClass("active");
-        setTimeout(hide, 500);
+        setTimeout(hide, 2000);
 
     });
 

@@ -21,14 +21,14 @@
                 <strong>my bookings : {{required_date|length}}  </strong> <span>order available</span>
                 {% endif %}
             {% else %}
-                <h3>ohh ! you have not make any orders yet </h3>
+                <h3>ohh ! you didn't make any orders yet </h3>
                 <a href="{% url 'planner:planner' %}" class="button">Click Here to Make an Order</a>
             {% endif %}
         </div>
         {% for bookings in  order %}
             {% if bookings.selected_date >= today %}
                 <div class="orders {% cycle 'one' 'two' 'three' %}">
-                        <h1>{{ forloop.counter }}. {{ bookings.selected_date}}</h1>
+                        <h1> {{ bookings.selected_date}}</h1>
                         <div class="buttons">
                             <a class="danger action-button reload"
                             href="{% url 'planner:delete_order' id=bookings.id %}"
